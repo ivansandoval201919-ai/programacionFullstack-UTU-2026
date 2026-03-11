@@ -1,4 +1,4 @@
-<u>Organización de la estructura del repositorio </u>
+<ins>Organización de la estructura del repositorio </ins>
 
 El repositorio cuenta con una organización que comienza según este orden:
 
