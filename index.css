@@ -1,0 +1,20 @@
+
+summary{
+    list-style: none;    
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+ul{
+    text-align: left;
+    list-style: none;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-color: #ff9500;
+}
+details{
+
+}
