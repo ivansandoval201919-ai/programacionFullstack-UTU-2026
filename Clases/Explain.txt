@@ -1,12 +1,12 @@
-header: se encuentra en todas las partes en el lado superior.
-nav: se encuentra en todas las paginas y normalmente aparece en el header.
-main: se encuentra en todas las paginas y es el contenido principal.
-section: se encuentra mayoritariamente en paginas de informacion(Wikipedia).
-footer: se encuentra en todas las paginas y en el lado inferior.
-article: se encuentra en paginas de informacion(Wikipedia).
-sidebars: se encuentra en todas las paginas.
-lists: se encuentra en todas las paginas.
-forms: se encuentra en paginas de registro o inicio de sesion.
-imgs: se encuentra en todas las paginas y es una imagen.
-div: se encuentra en todas las paginas y en todas partes.
-span: se encuentra en todas las paginas y es un texto.
+header: Se encuentra en todas las partes en el lado superior.
+nav: Se encuentran en todas las paginas y normalmente aparece en el header.
+main: Se encuentran en todas las paginas y es el contenido principal.
+section: Se encuentran mayoritariamente en paginas de informacion(Wikipedia).
+footer: Se encuentran en todas las paginas y en el lado inferior.
+article: Se encuentran en paginas de informacion(Wikipedia).
+sidebars: Se encuentran en todas las paginas.
+lists: Se encuentran en todas las paginas.
+forms: Se encuentran en paginas de registro o inicio de sesion.
+imgs: Se encuentran en todas las paginas y es una imagen.
+div: Se encuentran en todas las paginas y en todas partes.
+span: Se encuentran en todas las paginas y es un texto.
