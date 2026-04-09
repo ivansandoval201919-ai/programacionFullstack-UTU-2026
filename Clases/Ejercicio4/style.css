@@ -39,7 +39,7 @@ color: white;
 }
 .container{
 
- background-color: #dc7e02;
+
  width: 92%;
  margin: 0 auto;
     
@@ -64,4 +64,10 @@ color: white;
 }
 .section{
 background-color: #ff4d00;
+
+}
+.testing{
+    background-color: #00cf68;
+    width: 92%;
+    margin: 0 auto;
 }
