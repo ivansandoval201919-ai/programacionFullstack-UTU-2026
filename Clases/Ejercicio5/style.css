@@ -1,0 +1,30 @@
+.container {
+    margin: auto;
+    width: 92%;
+    background-color: #6c6a6a;
+border-color: black
+}
+.box1{
+    background-color: #D2FF28;
+    width: 100%;
+    height: 100%;
+}
+.box2{
+    background-color: #D2FF28;
+    width: 100%;
+    height: 100%;
+}
+.box3{
+    background-color: #D2FF28;
+    width: 100%;
+    height: 100%;
+}
+.word1{
+    color: black;
+}
+.word2{
+    color: black;
+}
+.word3{
+    color: black;
+}
