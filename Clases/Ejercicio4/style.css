@@ -1,25 +1,18 @@
+html{
+    font-size: 1rem;
+    background-image: url()
+}
 .title{
     text-align: center;
     color: #ff9500;
 }
 body{
-    background-color:black
+    background-color:black;
+    margin: 0;
+    padding: 0;
 }
 span{
     color: white;
-}
-.subtitle-1{
-    color: white;
-    text-align: left;
-}
-
-.text{
-    color: white;
-    text-align: right;
-}
-.text-1{
-    color: white;
-    text-align: left;
 }
 .img{
 text-align: right;
@@ -64,10 +57,8 @@ color: white;
 }
 .section{
 background-color: #ff4d00;
+border-radius: 10px;
+font-size: 1rem;
+margin: 1%;
 
-}
-.testing{
-    background-color: #00cf68;
-    width: 92%;
-    margin: 0 auto;
 }
