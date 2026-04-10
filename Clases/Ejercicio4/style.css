@@ -3,9 +3,20 @@ html{
    
     
 }
+#video-bg {
+    position: fixed;      /* Se queda fijo aunque hagas scroll */
+    top: 0;
+    left: 0;
+    width: 100%;          /* Ocupa todo el ancho */
+    height: 100%;         /* Ocupa todo el alto */
+    object-fit: cover;    /* Recorta para cubrir toda la pantalla sin deformarse */
+    z-index: -1;          /* Lo pone DETRÁS de todo el contenido */
+}
+
 .title{
+    
     text-align: center;
-    color: #ff9500;
+    color: #D2FF28;
 }
 body{
     background-color:black;
@@ -17,48 +28,40 @@ span{
     color: white;
 }
 .img{
-text-align: right;
-border: 2px solid #ff9500;
-width: fit-content;
-margin-left: auto;
+    width: fit-content;
+    margin-left: auto;
 }
 .border-subtitle{
-border: 2px solid #ff9500;
 width: fit-content;
-color: white;
+color: #F2F2F2;
 }
 .border-text{
-border: 2px solid #ff9500;
 width: fit-content;
-color: white;
+color: #F2F2F2;
 }
 .container{
-
-
+    
  width: 92%;
  margin: 0 auto;
     
 }
 .border-subtitle-reverse{
-    border: 2px solid #ff9500;
     width: fit-content;
     color: white;
     margin-left: auto;
 }
 .border-text-reverse{
-    border: 2px solid #ff9500;
     width: fit-content;
     color: white;
     margin-left: auto;
 }
 .img-reverse{
     text-align: right;
-    border: 2px solid #ff9500;
     width: fit-content;
     margin-right: auto;
 }
 .section{
-background-color: #ff4d00;
+background-color: #2A2A2A;
 border-radius: 10px;
 font-size: 1rem;
 margin: 1%;
