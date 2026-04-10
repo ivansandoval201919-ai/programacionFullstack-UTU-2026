@@ -3,15 +3,6 @@ html{
    
     
 }
-#video-bg {
-    position: fixed;      /* Se queda fijo aunque hagas scroll */
-    top: 0;
-    left: 0;
-    width: 100%;          /* Ocupa todo el ancho */
-    height: 100%;         /* Ocupa todo el alto */
-    object-fit: cover;    /* Recorta para cubrir toda la pantalla sin deformarse */
-    z-index: -1;          /* Lo pone DETRÁS de todo el contenido */
-}
 
 .title{
     
@@ -56,7 +47,6 @@ color: #F2F2F2;
     margin-left: auto;
 }
 .img-reverse{
-    text-align: right;
     width: fit-content;
     margin-right: auto;
 }
@@ -66,4 +56,11 @@ border-radius: 10px;
 font-size: 1rem;
 margin: 1%;
 
+}
+.footer{
+    background-color: #2A2A2A;
+    font-size: 1rem;
+    margin: 1%;
+    text-align: center;
+    color: white;
 }
