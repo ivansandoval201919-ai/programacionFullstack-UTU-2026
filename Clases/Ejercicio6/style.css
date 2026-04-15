@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0; /*adaptar la pagina y forzarla a que sea 0*/
+}
+.container1{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 24px;
+    justify-content: center;
+
+}
+.accept{
+    background-color: rgb(24, 201, 24);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.accept:hover{
+    background-color: rgb(154, 216, 66);
+    color: green;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.decline{
+    background-color: rgba(255, 179, 56, 0.735);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.decline:hover{
+    background-color: rgb(178, 184, 95);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.delete{
+    background-color: rgb(215, 6, 6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;/*exige que el padding y el border se incluyan en el ancho y alto total*/
+}
+.delete:hover{
+    background-color: rgb(197, 56, 56);
+    color: rgb(137, 13, 13);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.icon{
+    display: felx;
+    position: absolute;
+    top: 5px;
+    left: 95px;
+}
+.icon i{
+    font-size: 11px;
+}
