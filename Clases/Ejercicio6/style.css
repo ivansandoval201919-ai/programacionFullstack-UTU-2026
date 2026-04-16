@@ -200,7 +200,7 @@ a{
     top: 90px;
     height: 800px;
     background-color: rgb(255, 255, 255);
-    position: relative;
-    z-index: 60;
+    position: relative; /*"activida" la opcion z-index*/
+    z-index: 60; /*sirve para que se ponga encima de los elementos*/
     border-top: 3px dashed red; 
 }
