@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 100;
 }
 nav{
     display: flex;
@@ -27,7 +27,12 @@ p{
 }
 .nav{
     display: flex;
-    width: 100%; /* Cambiado de 60px a 100% para que ocupe todo el ancho */
+    width: 100%; 
+    position: sticky;
+    top: 60px;
+    z-index: 50;
+    
+    /* Cambiado de 60px a 100% para que ocupe todo el ancho */
 }
 .category{
     background-color: #74B9FF;
@@ -188,6 +193,14 @@ a{
     width: 52px;
     box-sizing: border-box;
 }
-.d{
-    height: 5000px;
+
+
+
+.hiddenclass{
+    top: 90px;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 60;
+    border-top: 3px dashed red; 
 }
