@@ -204,3 +204,9 @@ a{
     z-index: 60; /*sirve para que se ponga encima de los elementos*/
     border-top: 3px dashed red; 
 }
+.hiddenclass p{
+    color: #2D3436;
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+}
