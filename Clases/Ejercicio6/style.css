@@ -168,6 +168,16 @@ a{
     width: 110px;       
     box-sizing: border-box;
 }
+.product:hover{
+    background-color: #0e68c2;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;       
+    box-sizing: border-box;
+}
 .product-big{
     background-color: #FF7675;
     color: white;
