@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,wght@0,700;0,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background-color: #3EBFFF;
+     padding-bottom: 40px;
+}
+
+.sunnyside {
+    padding: 20px;
+    color: white;
+    
+}
+
+.contact {
+    border: 2px solid;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.header_img {
+   background-image: url(/Practicos/Escrito_Fronted/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat; /*Si el background-size es menor a 100% repite el background hasta rellenar el contenedor.*/
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.text_header_img {
+    
+    position: absolute;
+    top: 130px;
+    left: auto;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;   
+    font-size: 24px;
+    letter-spacing: 10px;
+}
+
+
+
+
+.SectionTransformBackground {
+
+     background-color: hsl(210, 4%, 67%);
+     display: flex;
+         justify-content: left;
+
+    align-items: left;
+     width: 50%; 
+
+  
+
+ 
+    
+    }
+
+
+
+.SectionTransform {
+    color: hsl(212, 27%, 19%);
+    justify-content: left;
+    align-items: left;
+    display: flex;
+    gap:50px;
+    padding: 24px;
+    height: 200px;
+    width: 50%; 
+   
+}
+
+.TransformEggImage {
+    margin-left: auto; 
+      height: 200px;
+    width: 100%; 
+   
+}
