@@ -1,1 +1,1 @@
-5, bien estructurada la pagina web, y aplicado estilos, pero no diferenciaste estilos entre secciones
+6, bien estructurada la pagina web, y aplicado estilos, pero no diferenciaste estilos entre secciones
