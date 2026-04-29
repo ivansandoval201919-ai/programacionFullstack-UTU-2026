@@ -227,8 +227,14 @@ border-color: black;
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: 800px;
+    height: 600px;
     gap: 10px;
+}
+.little_cont h1{
+    display: flex;
+    position: relative;
+    margin-top: 90px;
+
 }
 .Emily_R{
     border-color: black;
