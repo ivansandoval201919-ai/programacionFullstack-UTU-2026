@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento. Suma el padding*/
+    box-sizing: border-box;
 }
 
 html, body {
@@ -14,12 +14,11 @@ html, body {
 .Header {
     display: flex;
     background-color: #3EBFFF;
-    padding-bottom: 40px;
     color: white;
     padding: 14px 28px;
     justify-content: space-between;
-
 }
+
 .sunnyside {
     padding: 1px;
     color: rgb(255, 255, 255);
@@ -43,40 +42,38 @@ html, body {
 
 a {
     text-decoration: none;
-        color: white;
-
+    color: white;
 }
 
 .contact {
     display: flex;
-    border: 2px solid;
     background-color: white;
     border-radius: 30px;
     color: black;
     font-family: 'Fraunces', serif;
-    border: none;
     padding: 14px 28px;
 }
 
+/* Iván Sandoval */
+
 .header_img {
-   background-image: url(/Practicos/Escrito_Fronted/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
+    background-image: url(/Practicos/Escrito_Fronted/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
     background-position: bottom;
     background-size: 100%;
-    background-repeat: no-repeat; /*Si el background-size es menor a 100% repite el background hasta rellenar el contenedor.*/
+    background-repeat: no-repeat;
     width: 100%;
     height: 600px;
     display: flex;
     justify-content: center;
 }
+
 .text_header_img {
-    
     position: absolute;
     top: 170px;
-    left: auto;
     margin: 0 auto;
     color: white;
     font-family: 'Fraunces', serif;
-    font-weight: 900;   
+    font-weight: 900;
     font-size: 24px;
     letter-spacing: 10px;
 }
@@ -84,49 +81,47 @@ a {
 .arrow_down {
     position: absolute;
     top: 320px;
-    left: auto;
     margin: 0 auto;
     width: 48px;
-     
 }
 
-/*Augusto Fernandez*/
+/* Fin de Iván Sandoval */
+
+/* Augusto Fernandez */
 
 .SectionTransformBackground {
     background-color: white;
     width: 100%;
     height: 500px;
     display: flex;
-    justify-content: left;
-    align-items: left;
-    
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .SectionTransform {
     gap: 24px;
     padding: 60px 80px;
-     width: 50%;
+    width: 50%;
     color: hsl(212, 27%, 19%);
     display: flex;
-    
-       flex-direction: column;
+    flex-direction: column;
     justify-content: center;
-   
 }
 
 .SectionTransformSmall p {
     color: hsl(232, 10%, 55%);
     font-size: 16px;
-    line-height: 1.7; /*Espacio vertical entre lineas de texto*/
+    line-height: 1.7;
 }
- .LearnMore1 {
+
+.LearnMore1 {
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
     font-size: 14px;
     letter-spacing: 2px;
     border-bottom: 2px solid pink;
-    cursor: pointer; /*Cambia el cursor a un puntero al pasar sobre el texto*/
+    cursor: pointer;
 }
 
 .TransformEggImage {
@@ -135,21 +130,16 @@ a {
 }
 
 .TransformEggImage img {
-       
-    object-fit: cover; /*Ajusta una imagen dentro de un contenedor*/
-     
-      height: 100%;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
-   
-    
 }
 
 .SectionStandOutBackground {
     width: 100%;
-     height: 500px;
+    height: 500px;
     background-color: white;
-     display: flex;
-    
+    display: flex;
 }
 
 .StandOutImage {
@@ -168,24 +158,22 @@ a {
     padding: 60px 80px;
     width: 50%;
     color: hsl(212, 27%, 19%);
-     
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
- .LearnMore2 {
+
+.LearnMore2 {
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
     font-size: 14px;
     letter-spacing: 2px;
     border-bottom: 2px solid pink;
-    cursor: pointer; /*Cambia el cursor a un puntero al pasar sobre el elemento*/
+    cursor: pointer;
 }
 
-
-  .Section1 {
+.Section1 {
     display: flex;
     width: 100%;
     height: 550px;
@@ -194,25 +182,23 @@ a {
 .SectionGraphicDesignBackground {
     position: relative;
     width: 50%;
-    
-     height: 100%;
-    overflow: hidden; /*oculta todo el contenido que se salga de los límites del elemento.*/
+    height: 100%;
+    overflow: hidden;
 }
 
- .GraphicDesignImage img {
-  
-  object-fit: cover;
+.GraphicDesignImage img {
+    object-fit: cover;
     display: block;
-      width: 100%;
+    width: 100%;
     height: 100%;
 }
 
-  .SectionGraphicDesign {
+.SectionGraphicDesign {
     position: absolute;
     text-align: center;
     padding: 0 40px;
     color: hsl(167, 40%, 24%);
-      bottom: 60px;
+    bottom: 60px;
     left: 0;
     right: 0;
 }
@@ -240,17 +226,15 @@ a {
     padding: 0 40px;
     color: hsl(212, 27%, 19%);
 }
-    
-    /*Fin de Augusto Fernandez*/
-    
 
-    /*Iván Sandoval*/
+/* Fin de Augusto Fernandez */
+
+/* Iván Sandoval */
 
 .cont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     justify-content: center;
     width: 100%;
     height: 900px;
@@ -259,7 +243,6 @@ a {
 }
 
 .little_cont {
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,118 +250,111 @@ a {
     height: 600px;
     gap: 10px;
 }
-.cont h1{
+
+.cont h1 {
     display: flex;
     position: absolute;
     text-align: center;
     top: 2420px;
     left: 480px;
     font-family: 'Fraunces', sans-serif;
-    font-weight: 700, 900;
+    font-weight: 900;
     color: rgb(171, 170, 170);
     letter-spacing: 5px;
     font-size: 18px;
-
 }
-.Emily_R{
-    
+
+.Emily_R {
     width: 25%;
     height: 50%;
 }
-.Emily_R p{
+
+.Emily_R p {
     margin-top: 40px;
     color: gray;
-
 }
-.Emily_R .name{
+
+.Emily_R .name {
     margin-top: 40px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-.Emily_R .ocup{
+
+.Emily_R .ocup {
     margin-top: 0px;
-                font-weight: bold;
-
-
+    font-weight: bold;
 }
 
-.Thomas_S p{
+.Thomas_S p {
     margin-top: 40px;
-        color: gray;
-
+    color: gray;
 }
-.Thomas_S .name{
+
+.Thomas_S .name {
     margin-top: 20px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-.Thomas_S .ocup{
+
+.Thomas_S .ocup {
     margin-top: 0px;
     font-weight: bold;
-
 }
-.Jennie_F p{
+
+.Jennie_F p {
     margin-top: 40px;
     color: gray;
-
 }
-.Jennie_F .name{
+
+.Jennie_F .name {
     margin-top: 40px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-.Jennie_F .ocup{
+
+.Jennie_F .ocup {
     margin-top: 0px;
-        color: gray;
-            font-weight: bold;
-
-
+    color: gray;
+    font-weight: bold;
 }
-.Thomas_S{
-    
+
+.Thomas_S {
     width: 25%;
     height: 50%;
 }
-.Jennie_F{
-    
+
+.Jennie_F {
     width: 25%;
     height: 50%;
-
-
 }
+
 img.emily {
-   border-radius: 50%;
+    border-radius: 50%;
     height: 70px;
     width: 70px;
     margin-bottom: 20px;
+}
 
-    
-    }
 img.thomas {
     border-radius: 50%;
     height: 70px;
     width: 70px;
     margin-bottom: 20px;
-    
-    }
+}
+
 img.jennie {
     border-radius: 50%;
     height: 70px;
     width: 70px;
     margin-bottom: 20px;
-    
-    }
+}
 
+/* Fin de Iván Sandoval */
 
-    /*fin de Iván Sandoval*/
-
-
-
-    /*Nicolas Negretto*/
-
+/* Nicolas Negretto */
 
 .img-footer {
     display: flex;
@@ -386,7 +362,7 @@ img.jennie {
     height: 100%;
 }
 
-.milkbottles { 
+.milkbottles {
     height: 400px;
     width: 25%;
 }
@@ -396,11 +372,11 @@ img.jennie {
     width: 25%;
 }
 
-
 .conito {
     height: 400px;
     width: 25%;
 }
+
 .cubos {
     height: 400px;
     width: 25%;
@@ -412,7 +388,6 @@ img.jennie {
     padding-bottom: 40px;
 }
 
-
 .sunnyside2 {
     display: flex;
     justify-content: center;
@@ -421,17 +396,14 @@ img.jennie {
     font-family: 'Barlow', sans-serif;
     font-size: 30px;
     font-weight: bold;
-    
 }
 
 .coso3 {
     display: flex;
-justify-content: center;
-
+    justify-content: center;
 }
 
 .coso4 {
-
     display: flex;
     align-items: center;
     gap: 70px;
@@ -441,7 +413,7 @@ justify-content: center;
 a2 {
     text-decoration: none;
     color: hsl(167, 40%, 24%);
-} 
+}
 
 .icon {
     display: flex;
@@ -449,4 +421,5 @@ a2 {
     gap: 30px;
     padding-top: 100px;
 }
-    /*fin deNicolas Negretto*/
+
+/* Fin de Nicolas Negretto */
