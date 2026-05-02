@@ -271,7 +271,8 @@ a {
     display: flex;
     position: absolute;
     text-align: center;
-    top: 2450px;
+    top: 2420px;
+    left: 480px;
     font-family: 'Fraunces', sans-serif;
     font-weight: 700, 900;
     color: rgb(171, 170, 170);
