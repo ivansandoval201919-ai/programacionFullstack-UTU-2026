@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento. Suma el padding*/
 }
 
 html, body {
@@ -14,11 +14,12 @@ html, body {
 .Header {
     display: flex;
     background-color: #3EBFFF;
+    padding-bottom: 40px;
     color: white;
     padding: 14px 28px;
     justify-content: space-between;
-}
 
+}
 .sunnyside {
     padding: 1px;
     color: rgb(255, 255, 255);
@@ -42,11 +43,13 @@ html, body {
 
 a {
     text-decoration: none;
-    color: white;
+        color: white;
+
 }
 
 .contact {
     display: flex;
+    border: 2px solid;
     background-color: white;
     border-radius: 30px;
     color: black;
@@ -56,24 +59,24 @@ a {
 }
 
 .header_img {
-    background-image: url(/Practicos/Escrito_Fronted/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
+   background-image: url(/Practicos/Escrito_Fronted/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
     background-position: bottom;
     background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /*Si el background-size es menor a 100% repite el background hasta rellenar el contenedor.*/
     width: 100%;
     height: 600px;
     display: flex;
     justify-content: center;
 }
-
 .text_header_img {
+    
     position: absolute;
     top: 170px;
     left: auto;
     margin: 0 auto;
     color: white;
     font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-weight: 900;   
     font-size: 24px;
     letter-spacing: 10px;
 }
@@ -84,154 +87,138 @@ a {
     left: auto;
     margin: 0 auto;
     width: 48px;
+     
 }
 
-/* Augusto Fernandez */
+/*Augusto Fernandez*/
 
 .SectionTransformBackground {
-    background-color: white;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
+
+     background-color: white;
+     display: flex;
+         justify-content: left;
+   align-items: left;
+     width: 100%; 
+
+  
+
+ 
+    
+    }
+
+
 
 .SectionTransform {
-    gap: 24px;
-    padding: 60px 80px;
-    width: 50%;
     color: hsl(212, 27%, 19%);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap:50px;
+    padding: 24px;
+    height: 200px;
+    width: 50%; 
+
 }
 
-.SectionTransformSmall p {
-    color: hsl(232, 10%, 55%);
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.LearnMore1 {
-    color: black;
-    font-weight: bold;
-    font-family: 'Fraunces', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid pink;
-    cursor: pointer;
-}
-
-.TransformEggImage {
-    width: 50%;
-    height: 100%;
-}
 
 .TransformEggImage img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.SectionStandOutBackground {
-    width: 100%;
-    height: 500px;
-    background-color: white;
-    display: flex;
-}
-
-.StandOutImage {
-    width: 50%;
-    height: 100%;
-}
-
-.StandOutImage img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .SectionStandOut {
-    gap: 24px;
-    padding: 60px 80px;
-    width: 50%;
-    color: hsl(212, 27%, 19%);
+     color: hsl(212, 27%, 19%);
+    align-items: left;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap:50px;
+    padding: 24px;
+    height: 200px;
+    width: 50%; 
+     
+    
 }
 
-.LearnMore2 {
-    color: black;
-    font-weight: bold;
-    font-family: 'Fraunces', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid pink;
-    cursor: pointer;
-}
 
-.Section1 {
-    display: flex;
-    width: 100%;
-    height: 550px;
-}
-
-.SectionGraphicDesignBackground {
-    position: relative;
+.StandOutImage  {
     width: 50%;
     height: 100%;
-    overflow: hidden;
+}
+    
+.StandOutImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.SectionStandOutBackground {
+
+  background-color: white;
+    display: flex;
+    width: 94%;
+
+}
+.SectionGraphicDesign {
+     position: absolute;
+     z-index: 999;
+       color: hsl(167, 40%, 24%); 
+       top: 325%;
+       left: 15%;
+       width: 250px;
+
+
+}
+
+
+ .GraphicDesignImage img {
+     position: relative;
+    
+    width: 47%;
+    height: 50%;
+
 }
 
 .GraphicDesignImage img {
-    object-fit: cover;
+   
     display: block;
-    width: 100%;
-    height: 100%;
+        
 }
 
-.SectionGraphicDesign {
-    position: absolute;
-    text-align: center;
-    padding: 0 40px;
-    color: hsl(167, 40%, 24%);
-    bottom: 60px;
-    left: 0;
-    right: 0;
-}
+
 
 .SectionPhotographyBackground {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.PhotographyImage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    background-color: white;
+    display: flex;
+    width: 94%;
+     margin-top: 50px;
+     
 }
 
 .SectionPhotography {
-    position: absolute;
-    bottom: 60px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 0 40px;
-    color: hsl(212, 27%, 19%);
+     position: absolute;
+     
+     z-index: 999;
+       color: hsl(167, 40%, 24%); 
+       top: 325%;
+       right: 15%;
+       width: 250px;
+
 }
 
-/* Fin de Augusto Fernandez */
+.PhotographyImage img {
+    position: relative;
+    display: block;
+    width: 93%;
+    height: 89%;
+    left: 83%;
+    bottom: 98%;
+     
+    
+    /*Fin de Augusto Fernandez*/
+    
+}
 
 .cont {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     justify-content: center;
     width: 100%;
     height: 900px;
@@ -240,6 +227,7 @@ a {
 }
 
 .little_cont {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -247,89 +235,115 @@ a {
     height: 600px;
     gap: 10px;
 }
-
-.cont h1 {
-    font-family: 'Fraunces', serif;
+.cont h1{
+    display: flex;
+    position: absolute;
+    text-align: center;
+    top: 3040px;
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 700, 900;
     color: rgb(171, 170, 170);
     letter-spacing: 5px;
     font-size: 18px;
-}
 
-.Emily_R {
+}
+.Emily_R{
+    
     width: 25%;
     height: 50%;
 }
-
-.Emily_R p {
+.Emily_R p{
     margin-top: 40px;
     color: gray;
-}
 
-.Emily_R .name {
+}
+.Emily_R .name{
     margin-top: 40px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-
-.Emily_R .ocup {
+.Emily_R .ocup{
     margin-top: 0px;
-    font-weight: bold;
+                font-weight: bold;
+
+
 }
 
-.Thomas_S {
-    width: 25%;
-    height: 50%;
-}
-
-.Thomas_S p {
+.Thomas_S p{
     margin-top: 40px;
-    color: gray;
-}
+        color: gray;
 
-.Thomas_S .name {
+}
+.Thomas_S .name{
     margin-top: 20px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-
-.Thomas_S .ocup {
+.Thomas_S .ocup{
     margin-top: 0px;
     font-weight: bold;
-}
 
-.Jennie_F {
-    width: 25%;
-    height: 50%;
 }
-
-.Jennie_F p {
+.Jennie_F p{
     margin-top: 40px;
     color: gray;
-}
 
-.Jennie_F .name {
+}
+.Jennie_F .name{
     margin-top: 40px;
     color: black;
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-
-.Jennie_F .ocup {
+.Jennie_F .ocup{
     margin-top: 0px;
-    color: gray;
-    font-weight: bold;
-}
+        color: gray;
+            font-weight: bold;
 
-img.emily,
-img.thomas,
+
+}
+.Thomas_S{
+    
+    width: 25%;
+    height: 50%;
+}
+.Jennie_F{
+    
+    width: 25%;
+    height: 50%;
+
+
+}
+img.emily {
+   border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 20px;
+
+    
+    }
+img.thomas {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 20px;
+    
+    }
 img.jennie {
     border-radius: 50%;
     height: 70px;
     width: 70px;
     margin-bottom: 20px;
-}
+    
+    }
+
+
+
+
+
+
 
 .img-footer {
     display: flex;
@@ -337,9 +351,21 @@ img.jennie {
     height: 100%;
 }
 
-.milkbottles,
-.orange,
-.conito,
+.milkbottles { 
+    height: 400px;
+    width: 25%;
+}
+
+.orange {
+    height: 400px;
+    width: 25%;
+}
+
+
+.conito {
+    height: 400px;
+    width: 25%;
+}
 .cubos {
     height: 400px;
     width: 25%;
@@ -351,6 +377,7 @@ img.jennie {
     padding-bottom: 40px;
 }
 
+
 .sunnyside2 {
     display: flex;
     justify-content: center;
@@ -359,14 +386,17 @@ img.jennie {
     font-family: 'Barlow', sans-serif;
     font-size: 30px;
     font-weight: bold;
+    
 }
 
 .coso3 {
     display: flex;
-    justify-content: center;
+justify-content: center;
+
 }
 
 .coso4 {
+
     display: flex;
     align-items: center;
     gap: 70px;
@@ -376,7 +406,7 @@ img.jennie {
 a2 {
     text-decoration: none;
     color: hsl(167, 40%, 24%);
-}
+} 
 
 .icon {
     display: flex;
