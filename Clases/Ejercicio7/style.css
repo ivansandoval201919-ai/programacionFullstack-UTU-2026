@@ -1,5 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento. Suma el padding*/
+}
+html{
+    width: 100%;   
+}
 .container4{
-background-color: rgb(9, 9, 66);
+background-color: #F8F9FA;
 display: flex;
 
 gap: 40px;
@@ -8,17 +16,16 @@ margin: 10%;
 
 }
 .block{
-background-color: rgb(3, 3, 134); 
+background-color: #9c9ea1; 
 padding: 24px; 
 width: 100px;
 display: flex;
 flex-direction: column; /* apila los spans en vertical, siempre va en el padre */
 align-items: center; /* centra horizontalmente */
 width: 5000px;
-border-top: 3px solid rgba(128, 128, 128, 0.658)
 }
 .block:hover{
-background-color: rgb(250, 106, 106); 
+background-color: rgb(245, 42, 42); 
 padding: 24px; 
 width: 100px;
 display: flex;
