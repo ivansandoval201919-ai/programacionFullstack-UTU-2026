@@ -1,0 +1,1 @@
+El index.html lo hice con ayuda de Claude, pude entender el cambio que hizo y deje el comentario abajo de todo para asi cuando quiera fijarme o cometa un error similar puedo recordar como solucionarlo. El hecho es que lo entendi todo.
