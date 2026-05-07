@@ -1,3 +1,42 @@
+.container4{
+background-color: rgb(9, 9, 66);
+display: flex;
+
+gap: 40px;
+padding: 60px;  
+margin: 10%;
+
+}
+.block{
+background-color: rgb(3, 3, 134); 
+padding: 24px; 
+width: 100px;
+display: flex;
+flex-direction: column; /* apila los spans en vertical, siempre va en el padre */
+align-items: center; /* centra horizontalmente */
+width: 5000px;
+border-top: 3px solid rgba(128, 128, 128, 0.658)
+}
+.block:hover{
+background-color: rgb(250, 106, 106); 
+padding: 24px; 
+width: 100px;
+display: flex;
+flex-direction: column; /* apila los spans en vertical, siempre va en el padre */
+align-items: center; /* centra horizontalmente */
+width: 5000px;
+}
+span{
+    color: white;
+    font-size: 24px;
+    
+}
+.text{
+    color: white;
+    text-align: center;
+    font-size: 9px;
+    
+}
 .card{
     padding: 0 ;
 }
@@ -14,4 +53,78 @@ img{
     height: auto;
     width: 50%;
     display: flex;
+}
+.container1{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+
+}
+.accept{
+    background-color: rgb(24, 201, 24);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.accept:hover{
+    background-color: rgb(154, 216, 66);
+    color: green;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.decline{
+    background-color: #FDCB6E;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.decline:hover{
+    background-color: rgb(178, 184, 95);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
+}
+.delete{
+    background-color: rgb(215, 6, 6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;/*exige que el padding y el border se incluyan en el ancho y alto total*/
+}
+.delete:hover{
+    background-color: rgb(197, 56, 56);
+    color: rgb(137, 13, 13);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    width: 110px;
+    box-sizing: border-box;
 }
