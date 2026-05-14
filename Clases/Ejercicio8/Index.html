@@ -30,7 +30,6 @@
           <button class="drop-item" data-cat="jpop"> J-Pop</button>
           <button class="drop-item" data-cat="electronic"> Electronic</button>
           <button class="drop-item" data-cat="pop"> Pop</button>
-          <button class="drop-item" data-cat="spanish"> Spanish music</button>
         </div>
       </div>
 
@@ -74,17 +73,18 @@
     /* ─── Song database ─────────────────────────────────────── */
     const SONGS = {
       rock: [
-        { title: "Back In Black",       artist: "AC/DC",              src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-        { title: "Smells Like Teen Spirit", artist: "Nirvana",        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-        { title: "Hotel California",    artist: "Eagles",             src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-        { title: "Sweet Child O' Mine", artist: "Guns N' Roses",      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
+        { title: "Back In Black",       artist: "AC/DC",              src: "" }
       ],
       jpop: [
-        { title: "Lemon",               artist: "Kenshi Yonezu",      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
-        { title: "Pretender",           artist: "Official HIGE DANdism", src: "https://www.youtube.com/watch?v=ZRtdQ81jPUQ&list=RDZRtdQ81jPUQ&start_radio=1" },
-        { title: "Gurenge",             artist: "LiSA",               src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
         { title: "IDOL",                artist: "YOASOBI",            src: "songs/IDOL.mp3" }
+      ],
+      electronic: [
+        { title: "Back In Black",       artist: "AC/DC",              src: "" }
+      ],
+      pop: [
+        { title: "Back In Black",       artist: "AC/DC",              src: "" }
       ]
+      
     };
 
     const ACCENT = { rock: '#e8734a', jpop: '#c084d0', electronic: '#c084d0', pop: '#1db954', spanish: '#1db954', random: '#1db954' };

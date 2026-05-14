@@ -115,7 +115,6 @@
     .drop-item[data-cat="jpop"]:hover  { border-left-color: var(--accent-jpop);  color: var(--accent-jpop); }
     .drop-item[data-cat="electronic"]:hover  { border-left-color: var(--accent-electronic);  color: var(--accent-electronic); }
     .drop-item[data-cat="pop"]:hover  { border-left-color: var(--accent-pop);  color: var(--accent-pop); }
-    .drop-item[data-cat="spanish"]:hover  { border-left-color: var(--accent-spanish);  color: var(--accent-spanish); }
 
     /* Random link */
     .nav-random {
