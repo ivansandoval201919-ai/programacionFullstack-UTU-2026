@@ -1,0 +1,283 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── Spotify-inspired palette — easy on the eyes ── */
+      --bg:            #121212;   /* fondo principal, casi negro cálido */
+      --surface:       #1e1e1e;   /* tarjetas / navbar */
+      --surface-alt:   #282828;   /* hover de items */
+      --border:        #333333;
+      --accent:        #1db954;   /* verde Spotify */
+      --accent-rock:   #e8734a;   /* naranja-teja suave para rock */
+      --accent-jpop:   #c084d0;   /* lila apagado para j-pop */
+      --accent-random: #1db954;
+      --text:          #ededec;   /* blanco hueso, no puro */
+      --text-sub:      #a7a7a7;   /* gris medio */
+      --muted:         #6a6a6a;
+      --nav-h:         64px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 100;
+    }
+
+    .nav-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 4px;
+      color: var(--accent);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── Dropdown ── */
+    .dropdown { position: relative; }
+
+    .nav-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      border-color: var(--text);
+      color: var(--text);
+      background: var(--surface-alt);
+    }
+    .nav-btn .arrow {
+      display: inline-block;
+      margin-left: 6px;
+      transition: transform .25s;
+      font-size: 0.65rem;
+    }
+    .dropdown.open .arrow { transform: rotate(180deg); }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: #282828;
+      border-radius: 8px;
+      min-width: 170px;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    .dropdown.open .dropdown-menu { display: flex; }
+
+    .drop-item {
+      background: none;
+      border: none;
+      color: var(--text-sub);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      cursor: pointer;
+      text-align: left;
+      border-left: 3px solid transparent;
+      transition: color .15s, border-color .15s, background .15s;
+    }
+    .drop-item:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .drop-item[data-cat="rock"]:hover  { border-left-color: var(--accent-rock);  color: var(--accent-rock); }
+    .drop-item[data-cat="jpop"]:hover  { border-left-color: var(--accent-jpop);  color: var(--accent-jpop); }
+
+    /* Random link */
+    .nav-random {
+      background: var(--accent);
+      border: none;
+      color: #000;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      cursor: pointer;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .nav-random:hover {
+      background: #1ed760;
+      transform: scale(1.04);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--nav-h);
+    }
+
+    /* Soft ambient blobs — muy tenues para no cansar */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    .blob-1 { width: 560px; height: 560px; background: var(--accent); top: -120px; left: -140px; }
+    .blob-2 { width: 440px; height: 440px; background: var(--accent-rock); bottom: -100px; right: -100px; }
+
+    .idle-msg {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 5px;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.5;
+      user-select: none;
+      transition: opacity .4s;
+    }
+    .idle-msg.hidden { opacity: 0; pointer-events: none; }
+
+    /* ── PLAYER CARD ── */
+    #player-card {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 48px;
+      animation: fadeUp .45s ease both;
+    }
+    #player-card.visible { display: flex; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(24px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .category-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .category-label span { color: var(--accent); font-weight: 700; }
+
+    .vinyl {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #1e1e1e 0deg, #2a2a2a 40deg, #1e1e1e 80deg,
+        #2a2a2a 120deg, #1e1e1e 160deg, #2a2a2a 200deg,
+        #1e1e1e 240deg, #2a2a2a 280deg, #1e1e1e 320deg, #2a2a2a 360deg
+      );
+      box-shadow: 0 0 0 7px #161616, 0 0 0 11px #222, 0 20px 50px rgba(0,0,0,.6);
+      position: relative;
+    }
+    .vinyl::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(29,185,84,0.4);
+      transition: background .4s, box-shadow .4s;
+    }
+    .vinyl.spinning { animation: spin 3s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .song-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      letter-spacing: 3px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .song-artist {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      margin-top: -16px;
+    }
+
+    /* Play button */
+    #play-btn {
+      background: var(--accent);
+      border: none;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      padding: 14px 48px;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: background .2s, transform .15s;
+    }
+    #play-btn:hover {
+      background: #1ed760;
+      transform: scale(1.05);
+    }
+    #play-btn:active { transform: scale(0.98); }
+
+    /* Waveform bars */
+    .waveform {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 36px;
+      opacity: 0;
+      transition: opacity .4s;
+    }
+    .waveform.active { opacity: 1; }
+    .waveform .bar {
+      width: 4px;
+      border-radius: 2px;
+      background: var(--accent);
+      animation: wave 1s ease-in-out infinite;
+    }
+    .waveform .bar:nth-child(2) { animation-delay: .1s; }
+    .waveform .bar:nth-child(3) { animation-delay: .2s; }
+    .waveform .bar:nth-child(4) { animation-delay: .3s; }
+    .waveform .bar:nth-child(5) { animation-delay: .15s; }
+    @keyframes wave {
+      0%,100% { height: 6px; }
+      50%      { height: 28px; }
+    }
+
+    audio { display: none; }

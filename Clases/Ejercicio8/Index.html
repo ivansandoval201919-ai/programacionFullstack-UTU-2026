@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Música</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <!-- Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-title">Music Generator</div>
+    <div class="nav-right">
+
+      <!-- Categorías dropdown -->
+      <div class="dropdown" id="catDropdown">
+        <button class="nav-btn" id="catBtn">
+          Category<span class="arrow">▾</span>
+        </button>
+        <div class="dropdown-menu">
+          <button class="drop-item" data-cat="rock">🎸 Rock</button>
+          <button class="drop-item" data-cat="jpop">🌸 J-Pop</button>
+        </div>
+      </div>
+
+      <!-- Random -->
+      <a class="nav-random" href="random.html">✦ Random</a>
+
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="hero">
+
+    <p class="idle-msg" id="idleMsg">Elige una categoría</p>
+
+    <div id="player-card">
+      <p class="category-label">Playing: <span id="cat-display">—</span></p>
+
+      <div class="vinyl" id="vinyl"></div>
+
+      <div>
+        <p class="song-name" id="song-name">—</p>
+        <p class="song-artist" id="song-artist">—</p>
+      </div>
+
+      <div class="waveform" id="waveform">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <button id="play-btn"><span id="play-label">▶ REPRODUCIR</span></button>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+  </main>
+
+  <script>
+    /* ─── Song database ─────────────────────────────────────── */
+    const SONGS = {
+      rock: [
+        { title: "Bohemian Rhapsody",  artist: "Queen",               src: "" }, 
+        { title: "Back In Black",       artist: "AC/DC",              src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+        { title: "Smells Like Teen Spirit", artist: "Nirvana",        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
+        { title: "Hotel California",    artist: "Eagles",             src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
+        { title: "Sweet Child O' Mine", artist: "Guns N' Roses",      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
+      ],
+      jpop: [
+        { title: "Lemon",               artist: "Kenshi Yonezu",      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
+        { title: "Pretender",           artist: "Official HIGE DANdism", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" },
+        { title: "Gurenge",             artist: "LiSA",               src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
+        { title: "Dynamite",            artist: "BTS",                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
+        { title: "Idol",                artist: "YOASOBI",            src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
+      ]
+    };
+
+    const ACCENT = { rock: '#e8734a', jpop: '#c084d0', random: '#1db954' };
+    const LABEL  = { rock: '🎸 Rock', jpop: '🌸 J-Pop', random: '✦ Random' };
+
+    /* ─── State ─────────────────────────────────────────────── */
+    let currentCat  = null;
+    let currentSong = null;
+    let isPlaying   = false;
+
+    /* ─── Elements ──────────────────────────────────────────── */
+    const dropdown   = document.getElementById('catDropdown');
+    const catBtn     = document.getElementById('catBtn');
+    const idleMsg    = document.getElementById('idleMsg');
+    const playerCard = document.getElementById('player-card');
+    const catDisplay = document.getElementById('cat-display');
+    const songName   = document.getElementById('song-name');
+    const songArtist = document.getElementById('song-artist');
+    const playBtn    = document.getElementById('play-btn');
+    const playLabel  = document.getElementById('play-label');
+    const audio      = document.getElementById('audio-player');
+    const vinyl      = document.getElementById('vinyl');
+    const waveform   = document.getElementById('waveform');
+
+    /* ─── Dropdown toggle ───────────────────────────────────── */
+    catBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', () => dropdown.classList.remove('open'));
+
+    /* ─── Category selection ────────────────────────────────── */
+    document.querySelectorAll('.drop-item').forEach(item => {
+      item.addEventListener('click', () => {
+        selectCategory(item.dataset.cat);
+        dropdown.classList.remove('open');
+      });
+    });
+
+    function selectCategory(cat) {
+      currentCat = cat;
+      stopAudio();
+      pickRandomSong(cat);
+      applyAccent(ACCENT[cat]);
+      catDisplay.textContent = LABEL[cat] || cat;
+      idleMsg.classList.add('hidden');
+      playerCard.classList.add('visible');
+    }
+
+    /* ─── Pick random song ──────────────────────────────────── */
+    function pickRandomSong(cat) {
+      const pool = SONGS[cat] || getAllSongs();
+      currentSong = pool[Math.floor(Math.random() * pool.length)];
+      songName.textContent   = currentSong.title;
+      songArtist.textContent = currentSong.artist;
+      audio.src = currentSong.src;
+      playLabel.textContent = '▶ REPRODUCIR';
+    }
+
+    function getAllSongs() {
+      return Object.values(SONGS).flat();
+    }
+
+    /* ─── Accent theming ────────────────────────────────────── */
+    function applyAccent(color) {
+      document.documentElement.style.setProperty('--accent', color);
+    }
+
+    /* ─── Play/Pause button ─────────────────────────────────── */
+    playBtn.addEventListener('click', () => {
+      if (!currentSong) return;
+      if (isPlaying) {
+        pauseAudio();
+      } else {
+        playAudio();
+      }
+    });
+
+    function playAudio() {
+      audio.play().catch(() => {});
+      isPlaying = true;
+      playLabel.textContent = '⏸ PAUSAR';
+      vinyl.classList.add('spinning');
+      waveform.classList.add('active');
+    }
+
+    function pauseAudio() {
+      audio.pause();
+      isPlaying = false;
+      playLabel.textContent = '▶ REPRODUCIR';
+      vinyl.classList.remove('spinning');
+      waveform.classList.remove('active');
+    }
+
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+      isPlaying = false;
+      playLabel.textContent = '▶ REPRODUCIR';
+      vinyl.classList.remove('spinning');
+      waveform.classList.remove('active');
+    }
+
+    audio.addEventListener('ended', () => {
+      stopAudio();
+      // Auto-pick next random from same category
+      pickRandomSong(currentCat);
+    });
+
+    /* ─── Read category from URL (used by random.html redirect) */
+    const params = new URLSearchParams(location.search);
+    if (params.get('cat')) selectCategory(params.get('cat'));
+  </script>
+</body>
+</html>

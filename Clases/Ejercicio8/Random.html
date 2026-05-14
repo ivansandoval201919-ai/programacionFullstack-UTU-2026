@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random — Generador de Música</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #121212;
+      --text:   #ededec;
+      --accent: #1db954;
+    }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .blob {
+      position: fixed; border-radius: 50%; filter: blur(110px); opacity: 0.1; pointer-events: none;
+    }
+    .blob-1 { width: 600px; height: 600px; background: #1db954; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    .label {
+      font-size: 0.72rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #6a6a6a;
+    }
+
+    .big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      letter-spacing: 8px;
+      color: var(--accent);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.65; }
+    }
+
+    .sub {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #6a6a6a;
+    }
+
+    /* Dice spinner */
+    .dice {
+      font-size: 3rem;
+      animation: roll 0.5s steps(6) infinite;
+    }
+    @keyframes roll {
+      from { content: "⚀"; }
+    }
+    .dice-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .d { animation: rollD 0.6s steps(1) infinite; }
+    .d:nth-child(1) { animation-delay: 0s; }
+    .d:nth-child(2) { animation-delay: .2s; }
+    .d:nth-child(3) { animation-delay: .4s; }
+    @keyframes rollD {
+      0%   { content: "⚀"; }
+      16%  { content: "⚁"; }
+      33%  { content: "⚂"; }
+      50%  { content: "⚃"; }
+      66%  { content: "⚄"; }
+      83%  { content: "⚅"; }
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+
+  <p class="label">Modo</p>
+  <div class="big">RANDOM</div>
+
+  <div class="dice-wrap">
+    <span class="d">🎲</span>
+    <span class="d">🎲</span>
+    <span class="d">🎲</span>
+  </div>
+
+  <p class="sub">Sorteando canción aleatoria...</p>
+
+  <script>
+    // All available categories to randomize from
+    const cats = ['rock', 'jpop', 'random'];
+
+    setTimeout(() => {
+      // Pick a random category (or "random" = all songs)
+      const picked = cats[Math.floor(Math.random() * cats.length)];
+      window.location.href = `index.html?cat=${picked}`;
+    }, 1400);
+  </script>
+</body>
+</html>
