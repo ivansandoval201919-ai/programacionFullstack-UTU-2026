@@ -26,8 +26,11 @@
           Category<span class="arrow">▾</span>
         </button>
         <div class="dropdown-menu">
-          <button class="drop-item" data-cat="rock">🎸 Rock</button>
-          <button class="drop-item" data-cat="jpop">🌸 J-Pop</button>
+          <button class="drop-item" data-cat="rock"> Rock</button>
+          <button class="drop-item" data-cat="jpop"> J-Pop</button>
+          <button class="drop-item" data-cat="electronic"> Electronic</button>
+          <button class="drop-item" data-cat="pop"> Pop</button>
+          <button class="drop-item" data-cat="spanish"> Spanish music</button>
         </div>
       </div>
 
@@ -71,7 +74,6 @@
     /* ─── Song database ─────────────────────────────────────── */
     const SONGS = {
       rock: [
-        { title: "Bohemian Rhapsody",  artist: "Queen",               src: "" }, 
         { title: "Back In Black",       artist: "AC/DC",              src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
         { title: "Smells Like Teen Spirit", artist: "Nirvana",        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
         { title: "Hotel California",    artist: "Eagles",             src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
@@ -79,15 +81,14 @@
       ],
       jpop: [
         { title: "Lemon",               artist: "Kenshi Yonezu",      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
-        { title: "Pretender",           artist: "Official HIGE DANdism", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" },
+        { title: "Pretender",           artist: "Official HIGE DANdism", src: "https://www.youtube.com/watch?v=ZRtdQ81jPUQ&list=RDZRtdQ81jPUQ&start_radio=1" },
         { title: "Gurenge",             artist: "LiSA",               src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
-        { title: "Dynamite",            artist: "BTS",                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
-        { title: "Idol",                artist: "YOASOBI",            src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
+        { title: "IDOL",                artist: "YOASOBI",            src: "songs/IDOL.mp3" }
       ]
     };
 
-    const ACCENT = { rock: '#e8734a', jpop: '#c084d0', random: '#1db954' };
-    const LABEL  = { rock: '🎸 Rock', jpop: '🌸 J-Pop', random: '✦ Random' };
+    const ACCENT = { rock: '#e8734a', jpop: '#c084d0', electronic: '#c084d0', pop: '#1db954', spanish: '#1db954', random: '#1db954' };
+    const LABEL  = { rock: ' Rock', jpop: ' J-Pop',electronic: 'Electronic', pop: 'Pop', spanish: 'Spanish music', random: '✦ Random' };
 
     /* ─── State ─────────────────────────────────────────────── */
     let currentCat  = null;

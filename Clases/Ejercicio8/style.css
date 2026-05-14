@@ -9,6 +9,8 @@
       --accent:        #1db954;   /* verde Spotify */
       --accent-rock:   #e8734a;   /* naranja-teja suave para rock */
       --accent-jpop:   #c084d0;   /* lila apagado para j-pop */
+      --accent-electronic:   #75ea4e;   /* lila apagado para j-pop */
+      --accent-pop:   #5fe2ae;   /* lila apagado para j-pop */
       --accent-random: #1db954;
       --text:          #ededec;   /* blanco hueso, no puro */
       --text-sub:      #a7a7a7;   /* gris medio */
@@ -111,6 +113,9 @@
     .drop-item:hover { color: var(--text); background: rgba(255,255,255,0.06); }
     .drop-item[data-cat="rock"]:hover  { border-left-color: var(--accent-rock);  color: var(--accent-rock); }
     .drop-item[data-cat="jpop"]:hover  { border-left-color: var(--accent-jpop);  color: var(--accent-jpop); }
+    .drop-item[data-cat="electronic"]:hover  { border-left-color: var(--accent-electronic);  color: var(--accent-electronic); }
+    .drop-item[data-cat="pop"]:hover  { border-left-color: var(--accent-pop);  color: var(--accent-pop); }
+    .drop-item[data-cat="spanish"]:hover  { border-left-color: var(--accent-spanish);  color: var(--accent-spanish); }
 
     /* Random link */
     .nav-random {
