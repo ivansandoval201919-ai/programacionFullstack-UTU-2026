@@ -1,19 +1,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* ── Spotify-inspired palette — easy on the eyes ── */
-      --bg:            #121212;   /* fondo principal, casi negro cálido */
-      --surface:       #1e1e1e;   /* tarjetas / navbar */
-      --surface-alt:   #282828;   /* hover de items */
+      --bg:            #121212;
+      --surface:       #1e1e1e;
+      --surface-alt:   #282828;
       --border:        #333333;
-      --accent:        #1db954;   /* verde Spotify */
-      --accent-rock:   #e8734a;   /* naranja-teja suave para rock */
-      --accent-jpop:   #c084d0;   /* lila apagado para j-pop */
-      --accent-electronic:   #75ea4e;   /* lila apagado para j-pop */
-      --accent-pop:   #5fe2ae;   /* lila apagado para j-pop */
+      --accent:        #1db954;
+      --accent-rock:   #e8734a;
+      --accent-jpop:   #c084d0;
+      --accent-electronic:   #75ea4e;
+      --accent-pop:   #5fe2ae;
       --accent-random: #1db954;
-      --text:          #ededec;   /* blanco hueso, no puro */
-      --text-sub:      #a7a7a7;   /* gris medio */
+      --text:          #ededec;
+      --text-sub:      #a7a7a7;
       --muted:         #6a6a6a;
       --nav-h:         64px;
     }
@@ -26,7 +25,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAVBAR ── */  
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -53,7 +51,6 @@
       gap: 8px;
     }
 
-    /* ── Dropdown ── */
     .dropdown { position: relative; }
 
     .nav-btn {
@@ -116,7 +113,6 @@
     .drop-item[data-cat="electronic"]:hover  { border-left-color: var(--accent-electronic);  color: var(--accent-electronic); }
     .drop-item[data-cat="pop"]:hover  { border-left-color: var(--accent-pop);  color: var(--accent-pop); }
 
-    /* Random link */
     .nav-random {
       background: var(--accent);
       border: none;
@@ -137,7 +133,6 @@
       transform: scale(1.04);
     }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -147,7 +142,6 @@
       padding-top: var(--nav-h);
     }
 
-    /* Soft ambient blobs — muy tenues para no cansar */
     .blob {
       position: fixed;
       border-radius: 50%;
@@ -170,7 +164,6 @@
     }
     .idle-msg.hidden { opacity: 0; pointer-events: none; }
 
-    /* ── PLAYER CARD ── */
     #player-card {
       display: none;
       flex-direction: column;
@@ -239,7 +232,6 @@
       margin-top: -16px;
     }
 
-    /* Play button */
     #play-btn {
       background: var(--accent);
       border: none;
@@ -259,7 +251,6 @@
     }
     #play-btn:active { transform: scale(0.98); }
 
-    /* Waveform bars */
     .waveform {
       display: flex;
       align-items: center;

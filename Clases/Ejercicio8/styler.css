@@ -47,7 +47,6 @@
       color: #6a6a6a;
     }
 
-    /* Dice spinner */
     .dice {
       font-size: 3rem;
       animation: roll 0.5s steps(6) infinite;

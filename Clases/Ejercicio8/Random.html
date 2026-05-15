@@ -24,11 +24,9 @@
   <p class="sub">Sorteando canción aleatoria...</p>
 
   <script>
-    // All available categories to randomize from
     const cats = ['rock', 'jpop', 'random', 'electronic', 'pop'];
 
     setTimeout(() => {
-      // Pick a random category (or "random" = all songs)
       const picked = cats[Math.floor(Math.random() * cats.length)];
       window.location.href = `index.html?cat=${picked}`;
     }, 1400);

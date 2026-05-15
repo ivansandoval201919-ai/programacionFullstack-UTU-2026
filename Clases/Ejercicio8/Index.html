@@ -11,16 +11,13 @@
 </head>
 <body>
 
-  <!-- Blobs -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
 
-  <!-- NAVBAR -->
   <nav>
     <div class="nav-title">Music Generator</div>
     <div class="nav-right">
 
-      <!-- Categorías dropdown -->
       <div class="dropdown" id="catDropdown">
         <button class="nav-btn" id="catBtn">
           Category<span class="arrow">▾</span>
@@ -33,13 +30,11 @@
         </div>
       </div>
 
-      <!-- Random -->
       <a class="nav-random" href="random.html">✦ Random</a>
 
     </div>
   </nav>
 
-  <!-- MAIN -->
   <main class="hero">
 
     <p class="idle-msg" id="idleMsg">Choose one category</p>
@@ -70,10 +65,11 @@
   </main>
 
   <script>
-    /* ─── Song database ─────────────────────────────────────── */
     const SONGS = {
       rock: [
-        { title: "El hijo de Hernández",       artist: "Cuarteto de Nos",              src: "songs/ElhijodeHernandez.mp3" }
+        { title: "El hijo de Hernández",       artist: "Cuarteto de Nos",              src: "songs/ElhijodeHernandez.mp3" },
+        { title: "Ya no sé qué hacer conmigo",       artist: "Cuarteto de Nos",              src: "songs/dd.mp3" }
+
       ],
       jpop: [
         { title: "IDOL",                artist: "YOASOBI",            src: "songs/IDOL.mp3" }
@@ -90,12 +86,10 @@
     const ACCENT = { rock: '#e8734a', jpop: '#c084d0', electronic: '#75ea4e', pop: '#1db954', spanish: '#1db954', random: '#1db954' };
     const LABEL  = { rock: ' Rock', jpop: ' J-Pop',electronic: 'Electronic', pop: 'Pop', spanish: 'Spanish music', random: '✦ Random' };
 
-    /* ─── State ─────────────────────────────────────────────── */
     let currentCat  = null;
     let currentSong = null;
     let isPlaying   = false;
 
-    /* ─── Elements ──────────────────────────────────────────── */
     const dropdown   = document.getElementById('catDropdown');
     const catBtn     = document.getElementById('catBtn');
     const idleMsg    = document.getElementById('idleMsg');
@@ -109,14 +103,12 @@
     const vinyl      = document.getElementById('vinyl');
     const waveform   = document.getElementById('waveform');
 
-    /* ─── Dropdown toggle ───────────────────────────────────── */
     catBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       dropdown.classList.toggle('open');
     });
     document.addEventListener('click', () => dropdown.classList.remove('open'));
 
-    /* ─── Category selection ────────────────────────────────── */
     document.querySelectorAll('.drop-item').forEach(item => {
       item.addEventListener('click', () => {
         selectCategory(item.dataset.cat);
@@ -134,7 +126,6 @@
       playerCard.classList.add('visible');
     }
 
-    /* ─── Pick random song ──────────────────────────────────── */
     function pickRandomSong(cat) {
       const pool = SONGS[cat] || getAllSongs();
       currentSong = pool[Math.floor(Math.random() * pool.length)];
@@ -148,12 +139,10 @@
       return Object.values(SONGS).flat();
     }
 
-    /* ─── Accent theming ────────────────────────────────────── */
     function applyAccent(color) {
       document.documentElement.style.setProperty('--accent', color);
     }
 
-    /* ─── Play/Pause button ─────────────────────────────────── */
     playBtn.addEventListener('click', () => {
       if (!currentSong) return;
       if (isPlaying) {
@@ -190,11 +179,9 @@
 
     audio.addEventListener('ended', () => {
       stopAudio();
-      // Auto-pick next random from same category
       pickRandomSong(currentCat);
     });
 
-    /* ─── Read category from URL (used by random.html redirect) */
     const params = new URLSearchParams(location.search);
     if (params.get('cat')) selectCategory(params.get('cat'));
   </script>
