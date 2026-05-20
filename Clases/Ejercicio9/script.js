@@ -117,12 +117,37 @@ switch (select){
         alert('Opcion invalida');
         break;
 }
-*/
+x
 const fecha = new Date();
-switch (menu){
+const formatoLocal = new Intl.DateTimeFormat('es-UY', {
+  dateStyle: 'full' });
+  let menuselect = Number (prompt('Seleccione una opcion:\n1. Saludar\n2. Mostrar fecha actual\n3. Generar numero aleatorio'));
+
+switch (menuselect){
     case 1:
         alert('Hola!');
         break;
         case 2:
-            alert()
+            alert(formatoLocal.format(fecha));
+            break;
+            case 3:
+                randomNumber = Math.floor(Math.random() * 10000) + 1;
+                alert('Numero aleatorio: ' + randomNumber);
+                break;
         }
+*/
+
+   const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+   for(let i = 0; i < 10; i++){
+    let number = Number(prompt('Adivina el numero entre 1 y 10: '));
+
+    if (number === randomNumber){
+        alert('Felicidades, adivinaste el numero!');
+        break;
+    }
+    else {
+            alert('Incorrecto, intenta de nuevo');
+        }
+     
+}
