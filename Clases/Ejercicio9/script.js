@@ -82,7 +82,7 @@ for(let i=0; ; i++){
         break;
     }
 }
-*/
+
 
 let select = Number(prompt('1. Suma\n2. Resta\n3. Multiplicacion\n4. Division\n5. Salir'));
 switch (select){
@@ -117,3 +117,12 @@ switch (select){
         alert('Opcion invalida');
         break;
 }
+*/
+const fecha = new Date();
+switch (menu){
+    case 1:
+        alert('Hola!');
+        break;
+        case 2:
+            alert()
+        }
