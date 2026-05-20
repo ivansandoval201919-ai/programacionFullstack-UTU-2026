@@ -1,4 +1,4 @@
-/*alert("Hola mundo!");
+alert("Hola mundo!");
 
 let name = prompt('Ingrese el nombre: ');
 console.log(name);
@@ -135,7 +135,7 @@ switch (menuselect){
                 alert('Numero aleatorio: ' + randomNumber);
                 break;
         }
-*/
+
 
    const randomNumber = Math.floor(Math.random() * 10) + 1;
 
@@ -151,3 +151,68 @@ switch (menuselect){
         }
      
 }
+
+let total = 0;
+for(let i = 1; i <= 10; i++){
+    let number = Number(prompt('Ingrese un numero: '));
+
+    if(number%2 == 0){
+    total ++;
+    }
+
+}
+alert('La cantidad de numeros pares ingresados es: ' + total);
+
+
+let names = ['Jorge','Raul', 'Rupeto', 'Gonzalo', 'Ramon'];
+console.log(names);
+
+
+let names = ['Jorge','Raul', 'Rupeto', 'Gonzalo', 'Ramon'];
+for(let i = 0; i < names.length; i++){
+    console.log(names[i]);
+}
+
+let numbers = [1, 2, 3, 4, 5];
+
+let mayor = Math.max(...numbers); // el "..." representa el operador de propagación, que permite pasar los elementos del array como argumentos individuales a la función Math.max()
+let menor = Math.min(...numbers);
+
+let note = [8, 2, 6, 8, 5];
+let total = 0;
+for(let i = 0; i < note.length; i++){
+    total += note[i];
+}
+// Divide la suma total de las notas por la cantidad de notas para obtener el promedio
+total /= note.length;
+alert('El promedio de las notas es: ' + total);
+
+
+let names = [];
+while (true) {
+    let name = prompt('Ingrese un nombre: ');
+    if (name.trim().toLowerCase() === 'salir') {
+        break;
+    }
+    names.push(name);
+}
+
+let names = ['A', 'B', 'C', 'D', 'E'];
+for(let i = 0; i < names.length; i++){
+    console.log(names[i]);
+}
+
+let number = [8, 2, 6, 8, 5];
+for(let i = 0; i < number.length; i++){
+    if (number[i] %2 == 0){
+        console.log(number[i] + ' es par');
+    }
+}
+
+const fruits = ['Manzana', 'Banana', 'Naranja', 'Pera', 'Uva'];
+const includes = fruits.includes('Banana');
+console.log(includes);
+fruits.pop();
+fruits.push('Sandia');
+console.log(fruits);
+
