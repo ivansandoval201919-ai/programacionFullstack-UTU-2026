@@ -1,4 +1,4 @@
-alert("Hola mundo!");
+/*alert("Hola mundo!");
 
 let name = prompt('Ingrese el nombre: ');
 console.log(name);
@@ -211,7 +211,7 @@ for(let i = 0; i < number.length; i++){
         console.log(number[i] + ' es par');
     }
 }
-
+*/
 const fruits = ['Manzana', 'Banana', 'Naranja', 'Pera', 'Uva'];
 const includes = fruits.includes('Banana');
 console.log(includes);
