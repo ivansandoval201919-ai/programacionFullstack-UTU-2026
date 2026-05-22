@@ -83,7 +83,8 @@ for(let i=0; ; i++){
     }
 }
 
-
+let continueProgram = true;
+while (continueProgram){
 let select = Number(prompt('1. Suma\n2. Resta\n3. Multiplicacion\n4. Division\n5. Salir'));
 switch (select){
     case 1:
@@ -112,12 +113,14 @@ switch (select){
         break;
     case 5:
         alert('Adios');
+        continueProgram = false;
         break;
     default:
         alert('Opcion invalida');
         break;
 }
-x
+}
+
 const fecha = new Date();
 const formatoLocal = new Intl.DateTimeFormat('es-UY', {
   dateStyle: 'full' });
