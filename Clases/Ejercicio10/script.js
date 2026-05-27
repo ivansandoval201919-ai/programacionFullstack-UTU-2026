@@ -46,42 +46,50 @@ button.addEventListener('click', function(){
     input1.value = "";
 })
 */
-let name = document.querySelector('#name');
-let color = document.querySelector('#color');
-let text = document.querySelector('#text');
+const inputName = document.querySelector('#name');
+const inputColor = document.querySelector('#color');
+const inputText = document.querySelector('#text');
+const errorName = document.querySelector('#error-name');
+const errorColor = document.querySelector('#error-color');
+const errorText = document.querySelector('#error-text');
+const submitButton = document.querySelector('#button');
 
-let button = document.querySelector('#button');
-
-
-button.addEventListener('click', function(event){
+submitButton.addEventListener('click', function(event) {
     event.preventDefault(); // Evita que el formulario recargue la página al hacer click
     
-    if (name.value !== "" && color.value !== "" && text.value !== ""){
+    // Verifica cada campo y si es true da error sino muestra el if
+    errorName.classList.toggle('visible', inputName.value === "");
+    errorColor.classList.toggle('visible', inputColor.value === "");
+    errorText.classList.toggle('visible', inputText.value === "");
+
+    // si no esta vacio
+    if (inputName.value !== "" && inputColor.value !== "" && inputText.value !== "") {
         document.querySelector('#h1').classList.toggle('h1');
         
-        // Crear el contenedor <div>
-        if(name.value !==""){
-        let nuevoDiv = document.createElement('div');
-        }
-        else{}
-        // Crear los parrafos
-        let pNombre = document.createElement('p');
-        pNombre.textContent = `Name: ${name.value}`;
+        // Crear el contenedor div para agrupar los datos
+        const resultContainer = document.createElement('div');
         
-        let pColor = document.createElement('p');
-        pColor.textContent = `Color: ${color.value}`;
+        // Crear los parrafos 
+        const pNombre = document.createElement('p');
+        pNombre.textContent = `Name: ${inputName.value}`;
         
-        let pMensaje = document.createElement('p');
-        pMensaje.textContent = `Message: ${text.value}`;
+        const pColor = document.createElement('p');
+        pColor.textContent = `Color: ${inputColor.value}`;
         
-        // Juntar los parrafos dentro del <div>
-        nuevoDiv.appendChild(pNombre);
-        nuevoDiv.appendChild(pColor);
-        nuevoDiv.appendChild(pMensaje);
+        const pMensaje = document.createElement('p');
+        pMensaje.textContent = `Message: ${inputText.value}`;
         
-        // Agregar el <div> al final del body
-        document.body.appendChild(nuevoDiv);
-    } else {
-        alert("Debes rellenar los campos vacios");
+        // Juntar los parrafos dentro del contenedor div
+        resultContainer.appendChild(pNombre);
+        resultContainer.appendChild(pColor);
+        resultContainer.appendChild(pMensaje);
+        
+        // Agregar el contenedor al final del body
+        document.body.appendChild(resultContainer);
+
+        // Despues de enviar el formulario los campos quedan en blanco como si fueran la primera vez, sin esto quedarian todos los resultados acumulados
+        inputName.value = "";
+        inputColor.value = "";
+        inputText.value = "";
     }
-})
+});

@@ -5,3 +5,25 @@ background-color: black;
 .h1{
     color: red;
 }
+
+/* Contenedor de cada grupo de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+/* Mensaje de error (oculto por defecto) */
+.error-message {
+    display: none;
+    color: #ff3333;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+/* Clase para mostrar el mensaje de error cuando sea necesario */
+.error-message.visible {
+    display: block;
+}
