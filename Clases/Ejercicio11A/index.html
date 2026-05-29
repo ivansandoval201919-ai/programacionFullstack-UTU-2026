@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <span>Tareas totales: </span><span id='total-count'>0</span> <br>
+    <span>Tareas completadas: </span><span id='completed-count'>0</span> <br>
+    <span>Tareas pendientes: </span><span id='pending-count'>0</span>
+
+    <form action="">
+        <div class="form">
+            <input type="text" placeholder="Escribe una tarea..." id="inputTask">
+            <span class="error-message" id="error-task">No se aceptan valores vacios</span>
+        </div>
+        <button type="submit" id="button">Enviar</button>
+
+    </form>
+    <script src="script.js" defer></script>
+</body>
+</html>

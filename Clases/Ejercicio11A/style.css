@@ -1,0 +1,17 @@
+.error-message {
+    display: none;
+    color: #ff3333;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+.task.completed{
+    background-color: rgb(97, 213, 97);
+    width: 250px;
+
+}
