@@ -1,0 +1,17 @@
+/* 
+=============================================================================
+WHAT:
+Restauración del estilo de fondo naranja original del proyecto.
+
+WHY:
+Se regresa al diseño minimalista y exacto definido originalmente por el usuario,
+respetando la simplicidad del ejercicio y evitando estilos adicionales no deseados.
+
+HOW:
+Se asigna el color de fondo 'orange' al elemento raíz html y body directamente.
+=============================================================================
+*/
+
+html, body {
+    background-color: orange;
+}
