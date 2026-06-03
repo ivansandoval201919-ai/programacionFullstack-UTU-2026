@@ -7,7 +7,40 @@
     <title>Mi colección favorita</title>
 </head>
 <body>
-    
+     <h1 class="title">Mi colección favorita</h1>
+    <div class="content">
+        <div class="text-content"></div><p>Esta pagina se tratara para apgregar nuestras colecciones favoritas de juegos, peliculas y series</p>
+    <br>
+    <p>En esta pagina el usuario puede guardar jugos, peliculas y series</p>
+
+       <form>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text">
+  
+
+        <label for="desc">Descripción breve</label>
+        <textarea id="desc" placeholder="De qué trata..."></textarea>
+
+        <label for="tipo">Tipo</label>
+        <select id="tipo">
+            <option value="">Seleccionar...</option>
+            <option value="Videojuego">Videojuego</option>
+            <option value="Película">Película</option>
+            <option value="Serie">Serie</option>
+        </select>
+        <p class="error" id="err-tipo">Seleccioná un tipo</p>
+
+        <label for="estado">Estado</label>
+        <select id="estado">
+            <option value="">Seleccionar...</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="En progreso">En progreso</option>
+            <option value="Completado">Completado</option>
+        </select>
+
+        <label for="imagen">URL de imagen</label>
+        <input id="imagen" type="url" placeholder="https://...">
+</div>
 
     <script src="script.js" defer></script>
 </body>

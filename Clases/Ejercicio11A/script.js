@@ -16,7 +16,7 @@ function updateCounts(){
 button.addEventListener('click', function(event){
     event.preventDefault();
 
-    errorTask.classList.toggle('visible', input.value === "");
+    errorTask.classList.toggle('visible', input.value.trim() === ""); // El ".trim()" borra los espacios del texto en caso de que haya
 
     if(input.value !== '') {
         let div =document.createElement('div');
