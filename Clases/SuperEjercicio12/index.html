@@ -7,42 +7,81 @@
     <title>Mi colección favorita</title>
 </head>
 <body>
-     <h1 class="title">Mi colección favorita</h1>
-    <div class="content">
-        <div class="text-content"></div><p>Esta pagina se tratara para apgregar nuestras colecciones favoritas de juegos, peliculas y series</p>
-    <br>
-    <p>En esta pagina el usuario puede guardar jugos, peliculas y series</p>
+    <img src="Images/5091450.jpg">
+        <div class="content">
+                 <h1 class="title">Mi colección favorita</h1>
+<br>
+<br>
+                <p>Esta pagina web permite gestiona/crear una coleccion segun tus intereses. </p>
+                <br>
 
-       <form>
-        <label for="nombre">Nombre</label>
-        <input id="nombre" type="text">
-  
+       
+<div class="div">       
+    <div class="text-content">
+            <div class="labels">
+            <label for="nombre" >Nombre: </label> 
+            <label for="desc">Descripción breve: </label> 
+             <label for="tipo">Tipo: </label>
+            <label for="estado">Estado: </label>
+            <label for="img">URL: </label>
 
-        <label for="desc">Descripción breve</label>
-        <textarea id="desc" placeholder="De qué trata..."></textarea>
+        </div>
+        
+        </div>
 
+        <div class="inputs">
+asd
+        </div>
+    </div>
+     
+     
+     
+
+           <!--    <div class="form-group">
+
+        <input type="text" id="name" class="input">
+          <span class="error-message" id="error-task">No se aceptan valores vacios</span>
+<br> <br>
+        
+        <br>
+        <textarea placeholder="De qué trata..." id="description"></textarea>
+        
+<br> <br>
         <label for="tipo">Tipo</label>
-        <select id="tipo">
+        <select id="kind">
             <option value="">Seleccionar...</option>
             <option value="Videojuego">Videojuego</option>
             <option value="Película">Película</option>
             <option value="Serie">Serie</option>
         </select>
-        <p class="error" id="err-tipo">Seleccioná un tipo</p>
-
+      <br> <br>
         <label for="estado">Estado</label>
-        <select id="estado">
-            <option value="">Seleccionar...</option>
+        <select id="state">
+            <option value="">Seleccionar</option>
             <option value="Pendiente">Pendiente</option>
             <option value="En progreso">En progreso</option>
+            <option value="Viendo">Viendo</option>
+                <option value="Jugando">Jugando</option>
+            
             <option value="Completado">Completado</option>
         </select>
-<br>
+<br> <br>
+        URL: <input id="img" type="url">
+        <span class="error-message" id="error-img">No se aceptan valores vacios</span>
+      
+<br> <br>
 
-        <label for="imagen">URL de imagen</label>
-        <input id="imagen" type="url">
+        <button type="submit">Agregar</button>
+        <br>
+
+        <p>Elementos agregados: <span id="total-count">0</span></p>
+      
+     
+    </div>
+         
+        </div>
 </div>
-
+--> 
     <script src="script.js" defer></script>
 </body>
 </html>
