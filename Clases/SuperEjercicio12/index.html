@@ -19,43 +19,31 @@
 <div class="div">       
     <div class="text-content">
             <div class="labels">
-            <label for="nombre" >Nombre: </label> 
-            <label for="desc">Descripción breve: </label> 
-             <label for="tipo">Tipo: </label>
-            <label for="estado">Estado: </label>
-            <label for="img">URL: </label>
 
         </div>
         
         </div>
 
         <div class="inputs">
-asd
-        </div>
-    </div>
-     
-     
-     
+            <label for="nombre" >Nombre: </label> 
+            <input type="text" id="name" class="input">
 
-           <!--    <div class="form-group">
+            <label for="desc">Descripción breve: </label> 
+            <span class="error-message" id="error-task">No se aceptan valores vacios</span>
+            <textarea placeholder="De qué trata..." id="description"></textarea>
 
-        <input type="text" id="name" class="input">
-          <span class="error-message" id="error-task">No se aceptan valores vacios</span>
-<br> <br>
-        
-        <br>
-        <textarea placeholder="De qué trata..." id="description"></textarea>
-        
-<br> <br>
-        <label for="tipo">Tipo</label>
-        <select id="kind">
+            <label for="tipo">Tipo: </label>
+            <label for="tipo"></label>
+             <select id="kind">
             <option value="">Seleccionar...</option>
             <option value="Videojuego">Videojuego</option>
             <option value="Película">Película</option>
             <option value="Serie">Serie</option>
         </select>
-      <br> <br>
-        <label for="estado">Estado</label>
+            
+            <label for="estado">Estado: </label>
+
+        <label for="estado"></label>
         <select id="state">
             <option value="">Seleccionar</option>
             <option value="Pendiente">Pendiente</option>
@@ -65,16 +53,38 @@ asd
             
             <option value="Completado">Completado</option>
         </select>
-<br> <br>
-        URL: <input id="img" type="url">
+        
+        <label for="img">URL: </label>
+         <input id="img" type="url">
         <span class="error-message" id="error-img">No se aceptan valores vacios</span>
-      
-<br> <br>
-
-        <button type="submit">Agregar</button>
+        <button type="submit" class="btn-gradient">Agregar</button>
         <br>
 
         <p>Elementos agregados: <span id="total-count">0</span></p>
+    
+        </div>
+    </div>
+     
+     
+     
+
+           <!--    <div class="form-group">
+
+        
+<br> <br>
+        
+        <br>
+        
+        
+<br> <br>
+        
+      <br> <br>
+        
+<br> <br>
+      
+<br> <br>
+
+        
       
      
     </div>
@@ -82,6 +92,7 @@ asd
         </div>
 </div>
 --> 
+
     <script src="script.js" defer></script>
 </body>
 </html>
