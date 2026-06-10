@@ -10,26 +10,44 @@ let button = document.querySelector('button');
 button.addEventListener('click', function(event) {
     event.preventDefault();
 
-    let ok = true;
+event.preventDefault();
 
-    if (name.value === "") {
-        errorTask.classList.add('visible');
-        ok = false;
-    } else {
-        errorTask.classList.remove('visible');
+    errorTask.classList.toggle('visible', name.value.trim() === ""); // El ".trim()" borra los espacios del texto en caso de que haya
+
+    if(name.value.trim() !== '') {
+        let div =document.createElement('div');
+        div.classList.add('task');
+
+        const pTask = document.createElement('p');
+        const btnComplete = document.createElement('button');
+        btnComplete.textContent = "Completar"
+        const btnDelete = document.createElement('button');
+        btnDelete.textContent = "Eliminar"
+
+        pTask.textContent = `Tarea: ${input.value}`;
+        div.appendChild(pTask);
+        div.appendChild(btnComplete);
+
+        div.appendChild(btnComplete);
+        btnComplete.addEventListener('click', function(){
+            div.classList.toggle('completed');
+            updateCounts();
+
+        })
+
+        div.appendChild(btnDelete);
+        btnDelete.addEventListener('click', function(){
+            div.remove();
+            updateCounts();
+
+        })
+
+        document.body.appendChild(div);
+
+        input.value = "";
+        updateCounts();
+
     }
-
-
-    if (img.value === "") {
-        errorImg.classList.add('visible');
-        ok = false;
-    } else {
-        errorImg.classList.remove('visible');
-    }
-
-    if (!ok) return;
-
-   
 });
 
 function updateCounts() {

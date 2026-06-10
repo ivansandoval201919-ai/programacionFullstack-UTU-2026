@@ -31,8 +31,8 @@ body {
      width: 100%;
     height: 500px;
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: flex-start;  /* left no es valor válido → flex-start */
+    align-items: flex-start;      /* idem */
     border-color: red;
     border-style: solid;
     border-width: 2px;
@@ -47,23 +47,18 @@ body {
     gap: 20px;
     padding-right: 40px;
     align-items: flex-end;
-    height: 100%;
-padding: 10px 10px ;
-
-
-    
+    height: 90%;
+    padding: 10px 10px;
 }
 .inputs {
     border-color: rgb(0, 145, 255);
     border-style: solid;
     border-width: 2px;
-     width: 50%;
+    width: 60%;               /* estirado para ocupar más espacio a la derecha */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex-basis: 20px; 
     height: 100%;
-
 }
 .labels label {
     margin-bottom: 10px;
