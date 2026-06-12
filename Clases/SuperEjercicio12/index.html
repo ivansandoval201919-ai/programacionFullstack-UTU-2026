@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Mi colección favorita</title>
+    <title>Mi Colección Favorita</title>
 </head>
 <body>
-    <img src="Images/5091450.jpg">
+    <img src="Images/5091450.jpg" class="img-fondo">
         <div class="content">
-                 <h1 class="title">Mi colección favorita</h1>  <button id="modooscuro">Modo oscuro</button>
+                 <h1 class="title">Mi Colección Favorita</h1>  
+                 <button id="modooscuro">Modo oscuro</button>
 <br>
 <br>
                 <p>Esta pagina web permite gestiona/crear una coleccion segun tus intereses. </p>
@@ -17,11 +18,31 @@
 
        
 <div class="div">       
-    <div class="text-content">
-            
+
+            <div class="layout-principal">
+        </div>
+
+        <!-- Columna izquierda: filtros + tarjetas -->
+        <div class="columna-izquierda">
+
+            <!-- FILTROS -->
+            <div class="filtros">
+                <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="Videojuego">Videojuegos</button>
+                <button class="btn-filtro" data-filtro="Película">Películas</button>
+                <button class="btn-filtro" data-filtro="Serie">Series</button>
+                <button class="btn-filtro" data-filtro="favorito">Favoritos</button>
+                <button class="btn-filtro" data-filtro="Pendiente">Pendientes</button>
+                <button class="btn-filtro" data-filtro="En progreso">En progreso</button>
+                <button class="btn-filtro" data-filtro="Terminado">Terminados</button>
+            </div>
+
+            <div id="contendedorDeTarjetas"></div>
+
         </div>
 
         <div class="inputs">
+            
     
     <div class="control-formulario">
         <label for="name">Nombre: </label> 
@@ -79,14 +100,9 @@
     <br>
 
 </div>
-
-    </div>
-     
-     
-     
-
-           
-
+        
+</div>
+</div>
     <script src="script.js" defer></script>
 </body>
 </html>
