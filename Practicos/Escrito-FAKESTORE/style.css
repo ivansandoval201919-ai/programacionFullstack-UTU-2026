@@ -1,0 +1,37 @@
+*,* {box-sizing: border-box; margin: 0; padding: 0;}
+
+:root {
+
+  --bg-main: #0a0e17;       /* Fondo general de la página (Oscuro profundo/Azulado espacial) */
+  --bg-surface: #121824;    /* Fondo de contenedores principales: Header, Aside de filtros */
+  --bg-card: #1c2333;       /* Tarjetas de productos y carrito (Genera el contraste solicitado) */
+
+  --accent-cyan: #00f2fe;   /* Azul neón/Cian para botones principales (Login, Agregar al Carrito) */
+  --accent-purple: #7f00ff; /* Púrpura para estados activos, badges de categorías o degradados */
+  --accent-success: #39ff14;/* Verde eléctrico para el indicador de "Sesión Activa" o precios */
+
+
+  --text-primary: #ffffff;  /* Títulos principales, nombres de productos y precios destacados */
+  --text-muted: #94a3b8;    /* Descripciones de productos, categorías y textos secundarios */
+  --text-dark: #020617;     /* Texto ultra oscuro para legibilidad dentro de botones de acento brillantes */
+
+  
+  --border-color: #2e374a;  /* Separadores sutiles, bordes de tarjetas e inputs del formulario */
+
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.visible-flex {
+    display: flex;
+}
+
+.visible-grid {
+    display: grid;
+}
