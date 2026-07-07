@@ -1,4 +1,4 @@
-
+// Augusto Fernandez
 let selectCategoria = document.querySelector('#selectCategoria');
 let inputBuscador = document.querySelector('#inputBuscador');
 let gridProductos = document.querySelector('#gridProductos');
@@ -7,8 +7,28 @@ let msgResultado = document.querySelector('#msgResultado');
 let allProducts = [];
 
 
-document.querySelector('#selectCategoria').addEventListener('change', async () => {
+selectCategoria.addEventListener('change', async () => {
     const categoria = selectCategoria.value;
+
+    if (categoria === 'all') {
+        gridProductos.innerHTML = '';
+        allProducts.forEach(product => {
+            gridProductos.innerHTML += `
+                <article class="product-card">
+                    <img src="${product.image}" alt="${product.title}" width="200px" height="200px">
+                    <h3>${product.title}</h3>
+                    <p class="categoria">${product.category}</p>
+                    <p class="precio">$${product.price}</p>
+                    <button onclick="agregarAlCarrito(${product.id}, '${product.title}', ${product.price}, '${product.image}')">
+                        Agregar al carrito
+                    </button>
+                </article>
+            `;
+        });
+        msgResultado.innerHTML = '';
+        return;
+    }
+
     try {
         const response = await fetch(`https://fakestoreapi.com/products/category/${categoria}`, {
             method: 'GET',
@@ -83,7 +103,6 @@ try {
 }
 
 
-
 inputBuscador.addEventListener('input', () => {
     const query = inputBuscador.value.toLowerCase();
     const filtrados = allProducts.filter(product =>
@@ -103,16 +122,17 @@ inputBuscador.addEventListener('input', () => {
             </article>
         `;
     });
-    
+
     if (filtrados.length === 0) {
         msgResultado.innerHTML = 'No se encontraron productos.';
     } else {
         msgResultado.innerHTML = '';
     }
 });
+// Augusto Fernandez Fin
 
 //Ivan sandoval
 
 const carrito = [];
 
-const 
+const  

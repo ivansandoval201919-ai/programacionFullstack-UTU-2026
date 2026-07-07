@@ -35,3 +35,87 @@
 .visible-grid {
     display: grid;
 }
+
+#catalogo {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+}
+
+#filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 200px;
+}
+
+#contenedor-productos {
+    flex: 1;
+}
+
+#gridProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+/* Hace que #gridProductos sea grilla de 3 columnas iguales */
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+.product-card .categoria {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+.product-card .precio {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card button:hover {
+    background-color: #555;
+}
