@@ -124,7 +124,7 @@ inputBuscador.addEventListener('input', () => {
 
     renderProducts(filtrados);
 });
-
+//A
 //Ivan sandoval
 
 
@@ -180,7 +180,7 @@ return;
                     <span class="cantidad">${item.cantidad}</span>
                     <button onclick="cambiarCantidad(${item.id}, 1)">+</button>
                 </div>
-                <button class="btn-eliminar" onclick="eliminarDelCarrito(${item.id})">🗑️</button>
+                <button class="btn-eliminar" onclick="eliminarDelCarrito(${item.id})"><i class="fa-solid fa-xmark"></i></button>
             </div>
         `;
 
