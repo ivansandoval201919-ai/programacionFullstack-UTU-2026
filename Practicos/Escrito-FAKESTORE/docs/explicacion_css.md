@@ -1,10 +1,34 @@
-# Explicación de los Cambios en CSS (style.css)
+# Explicación de CSS Socrática (style.css)
 
-Este documento explica cada regla de CSS agregada en `style.css` para el diseño del carrito de compras en formato "Dark Mode Tecnológico".
+Este documento analiza las reglas y variables que implementaste como Integrante 3. Cada explicación está diseñada como un cuestionamiento socrático para ayudarte a internalizar el porqué de cada decisión técnica.
 
 ---
 
-## 1. Estilos del Cuerpo (`body`)
+## 1. Declaración de Variables en `:root`
+```css
+:root {
+  --bg-main: #0a0e17;       
+  --bg-surface: #121824;    
+  --bg-card: #1c2333;       
+  --accent-cyan: #00f2fe;   
+  --accent-purple: #7f00ff; 
+  --accent-success: #39ff14;
+  --text-primary: #ffffff;  
+  --text-muted: #94a3b8;    
+  --text-dark: #020617;     
+  --border-color: #2e374a;  
+}
+```
+
+### El cuestionamiento socrático:
+* **¿Por qué creamos variables en lugar de escribir los colores directamente (`#0a0e17`, `#ffffff`) en cada regla?**
+  * *Reflexión:* Si mañana el cliente decide cambiar el tono de fondo de la aplicación por uno más claro, ¿cuántos archivos y líneas tendrías que modificar? Al centralizar los colores en `:root`, cualquier cambio se hace en un solo lugar y se propaga a todo el sitio.
+* **¿Qué significa `:root` en CSS?**
+  * *Reflexión:* Representa el elemento de mayor nivel en el árbol del DOM (habitualmente la etiqueta `<html>`). Declarar variables aquí asegura que cualquier elemento de la página pueda heredarlas y usarlas.
+
+---
+
+## 2. Estilos del Cuerpo (`body`)
 ```css
 body {
     background-color: var(--bg-main);
@@ -13,22 +37,29 @@ body {
     min-height: 100vh;
 }
 ```
-* **`background-color: var(--bg-main);`**
-  * **Qué hace:** Aplica el color de fondo guardado en la variable `--bg-main` (un tono azul oscuro profundo `#0a0e17`).
-  * **Por qué:** Evita el fondo blanco por defecto del navegador y establece el tono del "Dark Mode".
-* **`color: var(--text-primary);`**
-  * **Qué hace:** Cambia el color del texto a blanco (`#ffffff`).
-  * **Por qué:** Permite leer los textos sobre el fondo oscuro (contraste).
-* **`font-family: ...;`**
-  * **Qué hace:** Cambia la tipografía a fuentes modernas sin serifas.
-  * **Por qué:** Hace que el diseño se vea más limpio y profesional en comparación con la tipografía por defecto del navegador (Times New Roman).
-* **`min-height: 100vh;`**
-  * **Qué hace:** Fuerza al `body` a ocupar por lo menos el 100% de la altura de la ventana visible (`vh` = viewport height).
-  * **Por qué:** Evita que el fondo oscuro se corte si hay poco contenido en la página.
+
+### El cuestionamiento socrático:
+* **¿Qué pasaría si omitiéramos `min-height: 100vh`?**
+  * *Reflexión:* Por defecto, un elemento bloque mide solo el alto de su contenido interno. Si tu página tiene un formulario de login muy pequeño, el `body` mediría solo unos 200px de alto, y el resto de la pantalla mostraría el fondo blanco por defecto del navegador. Al forzarlo a medir `100vh` (100% de la ventana), garantizas que el fondo oscuro cubra toda la pantalla desde el primer segundo.
+* **¿Por qué usamos `var()` para asignar el fondo y el color de texto?**
+  * *Reflexión:* Es la sintaxis nativa de CSS para consumir las variables de `:root`. Si no envolviéramos el nombre de la variable en `var()`, el navegador interpretaría la propiedad como un texto plano sin valor de color.
 
 ---
 
-## 2. Contenedor Principal del Carrito (`#carrito`)
+## 3. Clases Utilitarias de Visibilidad
+```css
+.hidden {
+    display: none;
+}
+```
+
+### El cuestionamiento socrático:
+* **¿Cuál es la diferencia entre ocultar con `display: none` (nuestra clase `.hidden`) y usar `visibility: hidden` u `opacity: 0`?**
+  * *Reflexión:* Si usas `visibility: hidden` u `opacity: 0`, el elemento se vuelve invisible pero **sigue ocupando espacio físico** en el diseño (queda un gran hueco vacío). Con `display: none`, el elemento se retira por completo del flujo del renderizado. Para nuestra SPA (donde queremos alternar entre la pantalla de login, el perfil y el catálogo sin dejar espacios vacíos intermedios), ¿cuál es la única opción válida? Exactamente, retirar el elemento físico usando `display: none`.
+
+---
+
+## 4. Contenedor del Panel del Carrito (`#carrito`)
 ```css
 #carrito {
     background-color: var(--bg-surface);
@@ -43,27 +74,16 @@ body {
     align-self: flex-start;
 }
 ```
-* **`background-color: var(--bg-surface);`**
-  * **Qué hace:** Aplica un color de fondo gris azulado un poco más claro (`#121824`) que el fondo de la página.
-  * **Por qué:** Crea una jerarquía visual, haciendo que el carrito resalte como un panel encima de la página.
-* **`border: 1px solid var(--border-color);` y `border-radius: 8px;`**
-  * **Qué hace:** Coloca un borde fino de color `#2e374a` y redondea las esquinas.
-  * **Por qué:** Da un aspecto de tarjeta moderna y prolija.
-* **`min-width: 300px;` y `max-width: 350px;`**
-  * **Qué hace:** Limita el ancho del panel para que no se estire demasiado ni se encoja tanto que no quepan los nombres de los productos.
-* **`display: flex;` y `flex-direction: column;`**
-  * **Qué hace:** Activa Flexbox en vertical dentro del carrito.
-  * **Por qué:** Alinea todos los elementos internos (título, lista, total) uno debajo de otro automáticamente.
-* **`gap: 16px;`**
-  * **Qué hace:** Deja un espacio de 16 píxeles entre los elementos del panel.
-  * **Por qué:** Evita usar `margin` repetidamente para separar los elementos.
-* **`align-self: flex-start;`**
-  * **Qué hace:** Alinea el panel arriba dentro del contenedor flex del catálogo.
-  * **Por qué:** Evita que el carrito se estire verticalmente de manera extraña si el catálogo de productos es muy largo.
+
+### El cuestionamiento socrático:
+* **¿Por qué definimos tanto un `min-width` como un `max-width`?**
+  * *Reflexión:* Si el navegador se achica o agranda y usáramos solo `width: 100%`, el carrito podría deformarse. Al fijar un mínimo de 300px aseguramos que las imágenes de los productos, botones y textos entren cómodamente. El máximo de 350px previene que el panel devore el espacio asignado a la grilla de productos.
+* **¿Qué solucionamos con `align-self: flex-start` en un contenedor flexbox?**
+  * *Reflexión:* Por defecto, en un contenedor flex (`#catalogo`), los elementos hijos se estiran verticalmente para medir lo mismo que el más alto. Si el catálogo tiene 100 productos, el panel del carrito se estiraría miles de píxeles hacia abajo, dejando un espacio vacío enorme e innecesario debajo del total. Con `align-self: flex-start`, le indicamos al carrito: "mide solo lo que tu contenido requiera y alineate arriba".
 
 ---
 
-## 3. Contenedor de la Lista (`#carrito-items`)
+## 5. Control de Desbordamiento de la Lista (`#carrito-items`)
 ```css
 #carrito-items {
     display: flex;
@@ -73,35 +93,14 @@ body {
     overflow-y: auto;
 }
 ```
-* **`max-height: 400px;`**
-  * **Qué hace:** Establece que la lista no puede medir más de 400 píxeles de alto.
-* **`overflow-y: auto;`**
-  * **Qué hace:** Habilita una barra de scroll vertical si los productos superan los 400px de altura.
-  * **Por qué:** Evita que si el usuario agrega 20 productos, el carrito se extienda infinitamente hacia abajo y rompa el diseño de la pantalla.
+
+### El cuestionamiento socrático:
+* **¿Qué ocurriría si un usuario agrega 15 productos diferentes y no tuviéramos `max-height: 400px` ni `overflow-y: auto`?**
+  * *Reflexión:* El panel del carrito crecería verticalmente de forma descontrolada, obligando al usuario a hacer scroll general hacia abajo solo para ver el botón de total. Al limitar la altura máxima a `400px` y definir `overflow-y: auto`, le ordenamos al navegador: "si la lista supera este tamaño, mantén el contenedor fijo y crea una barra de scroll interna".
 
 ---
 
-## 4. Tarjeta de cada Producto en el Carrito (`.cart-item`)
-```css
-.cart-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-}
-```
-* **`display: flex;` y `align-items: center;`**
-  * **Qué hace:** Convierte la tarjeta en un contenedor horizontal y centra sus elementos (imagen, textos, botones) verticalmente.
-* **`background-color: var(--bg-card);`**
-  * **Qué hace:** Fondo aún más claro (`#1c2333`) para la tarjeta del producto.
-  * **Por qué:** Genera contraste tridimensional: Página (oscuro) → Panel del Carrito (medio) → Producto del carrito (claro).
-
----
-
-## 5. Imagen del Producto (`.cart-item img`)
+## 6. Miniaturas del Carrito (`.cart-item img`)
 ```css
 .cart-item img {
     width: 50px;
@@ -112,69 +111,9 @@ body {
     padding: 2px;
 }
 ```
-* **`width: 50px;` y `height: 50px;`**
-  * **Qué hace:** Achica la imagen del producto a una miniatura.
-* **`object-fit: contain;`**
-  * **Qué hace:** Redimensiona la imagen sin deformarla (no la estira).
-* **`background-color: #fff;`**
-  * **Qué hace:** Le da un fondo blanco a la imagen.
-  * **Por qué:** Como las imágenes de FakeStore tienen fondo transparente, se verían mal sobre nuestro fondo oscuro. El fondo blanco hace que resalten.
 
----
-
-## 6. Textos del Producto (`.cart-item-info`)
-```css
-.cart-item-info h4 {
-    font-size: 13px;
-    color: var(--text-primary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-}
-```
-* **`-webkit-line-clamp: 1;` y `text-overflow: ellipsis;`**
-  * **Qué hace:** Corta el título del producto si es muy largo y le añade tres puntos suspensivos (`...`) al final.
-  * **Por qué:** Evita que títulos extremadamente largos (de 3 líneas) deformen el tamaño de la tarjeta en el carrito.
-
----
-
-## 7. Controles de Cantidad (`.cart-item-controls` y botones)
-```css
-.cart-item-controls button {
-    background-color: var(--accent-purple);
-    color: var(--text-primary);
-    border: none;
-    border-radius: 4px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-```
-* **`background-color: var(--accent-purple);`**
-  * **Qué hace:** Pinta los botones de `+` y `-` de color púrpura neón (`#7f00ff`).
-* **`width: 24px;` y `height: 24px;`**
-  * **Qué hace:** Hace los botones perfectamente cuadrados y pequeños.
-* **`cursor: pointer;`**
-  * **Qué hace:** Cambia el cursor a la "manito" al pasar el mouse por encima.
-  * **Por qué:** Indica visualmente al usuario que el botón es interactivo (clicable).
-
----
-
-## 8. Botón Eliminar (`.btn-eliminar`)
-```css
-.btn-eliminar {
-    background: none;
-    border: none;
-    color: #ff4444;
-    cursor: pointer;
-}
-```
-* **`color: #ff4444;`**
-  * **Qué hace:** Pinta el emoji de la papelera o el texto de color rojo.
-  * **Por qué:** En UX (experiencia de usuario), el rojo advierte de una acción destructiva (eliminar).
+### El cuestionamiento socrático:
+* **¿Por qué es crítico usar `object-fit: contain` en lugar de dejar que la imagen tome un tamaño libre?**
+  * *Reflexión:* Las imágenes de la API tienen diferentes proporciones (algunas son cuadradas, otras son verticales u horizontales). Si no aplicáramos `object-fit: contain`, las imágenes se estirarían y aplastarían para llenar los 50x50px, deformando el producto. `contain` le ordena a la imagen escalar de forma proporcional para caber dentro del contenedor sin recortarse ni deformarse.
+* **¿Por qué les pusimos fondo blanco (`#fff`) y padding si la web es oscura?**
+  * *Reflexión:* La mayoría de las imágenes de productos de la FakeStore API tienen fondos transparentes con bordes oscuros. Si las colocáramos directamente sobre nuestro panel gris oscuro, los bordes oscuros del producto serían invisibles. El cuadro blanco detrás actúa como un "lienzo" limpio para que cualquier producto destaque.
