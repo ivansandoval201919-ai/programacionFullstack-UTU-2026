@@ -10,31 +10,37 @@
     
     <header> <nav> </nav> </header>
 
-<section>
-    <h2><h2>
-    <form>
-        <div>
-        <label></label>
-        <input></input>
+<!-- nicolas negretto -->
+<section id="login">
+    <h2>Iniciar sesion</h2>
+    <form id="loginForm">
+        <div class="campo-formulario">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" placeholder="johnd" autocomplete="username" required>
         </div>
 
-        <div>
-        <label></label>
-        <input></input>
+        <div class="campo-formulario">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="m38rmF$" autocomplete="current-password" required>
         </div>
+
+        <button type="submit" id="btnLogin">Ingresar</button>
+        <p id="loginError" class="mensaje-error hidden"></p>
     </form>
 </section>
 
-    <section>
-        <h2></h2>
-        <div> 
-            <p><span></span></p>
-            <p><span></span></p>
-            <p><span></span></p>
-            <p><span></span></p>
-            <p><span></span></p>
-        </div>
-    </section>
+<section id="perfil" class="hidden">
+    <h2>Mi perfil</h2>
+    <div id="perfilInfo" class="perfil-card">
+        <p><span class="badge-sesion">Sesion activa</span></p>
+        <p><strong>Nombre:</strong> <span id="perfilNombre"></span></p>
+        <p><strong>Usuario:</strong> <span id="perfilUsuario"></span></p>
+        <p><strong>Email:</strong> <span id="perfilEmail"></span></p>
+        <p><strong>Telefono:</strong> <span id="perfilTelefono"></span></p>
+        <button id="btnLogout">Cerrar sesion</button>
+    </div>
+</section>
+<!-- Nicolas Negretto Fin -->
        
     <!-- Augusto Fernandez -->
       <main id="catalogo" class="hidden">
