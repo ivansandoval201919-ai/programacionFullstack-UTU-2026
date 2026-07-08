@@ -127,10 +127,7 @@ min-height: 100vh;
     background-color: #555;
 }
 
-/* 
-  WHAT: Estilos para el panel principal de la barra lateral del carrito de compras.
-  WHY: Le da forma de panel con fondo oscuro diferenciado y ancho fijo en el layout flexible.
-*/
+
 #carrito {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -144,10 +141,7 @@ min-height: 100vh;
     align-self: flex-start;
 }
 
-/* 
-  WHAT: Contenedor con scroll para los ítems agregados al carrito.
-  WHY: Previene que la interfaz se deforme o estire infinitamente hacia abajo cuando hay muchos productos.
-*/
+
 #carrito-items {
     display: flex;
     flex-direction: column;
@@ -156,10 +150,7 @@ min-height: 100vh;
     overflow-y: auto;
 }
 
-/* 
-  WHAT: Estilo de cada tarjeta de producto dentro del carrito.
-  WHY: Usa una distribución flexbox horizontal para alinear la miniatura, textos y botones en una sola fila.
-*/
+
 .cart-item {
     display: flex;
     align-items: center;
@@ -201,10 +192,7 @@ min-height: 100vh;
     color: var(--text-muted);
 }
 
-/* 
-  WHAT: Controles de cantidad (+ / -) y visualización del número.
-  WHY: Distribuye los botones y el número alineados para facilitar su clic.
-*/
+
 .cart-item-controls {
     display: flex;
     align-items: center;
@@ -236,10 +224,7 @@ min-height: 100vh;
     color: var(--text-primary);
 }
 
-/* 
-  WHAT: Botón de eliminación directa del ítem.
-  WHY: Usa un color rojo llamativo para indicar la acción destructiva de remover todo el producto.
-*/
+
 .btn-eliminar {
     background: none;
     border: none;
@@ -256,10 +241,7 @@ min-height: 100vh;
     color: #ff6666;
 }
 
-/* 
-  WHAT: Estilo del contenedor del total de la compra.
-  WHY: Añade un borde superior divisor y destaca el precio en color verde de éxito.
-*/
+
 .carrito-total-container {
     border-top: 1px solid var(--border-color);
     padding-top: 12px;
