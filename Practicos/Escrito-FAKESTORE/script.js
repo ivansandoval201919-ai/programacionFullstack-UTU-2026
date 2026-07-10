@@ -1,4 +1,5 @@
 //Nicolas Negretto inicio 
+
 const STORAGE_KEY = "ff_session";
  
 const loginSection = document.getElementById("login");
@@ -8,21 +9,21 @@ const loginForm = document.getElementById("loginForm");
 const loginError = document.getElementById("loginError");
 const btnLogout = document.getElementById("btnLogout");
  
-// muestra el perfil y el catalogo, y esconde el login
+// Muestra el perfil y el catalogo, y esconde el login
 function mostrarVistaLogueado() {
     loginSection.classList.add("hidden");
     perfilSection.classList.remove("hidden");
     catalogoMain.classList.remove("hidden");
 }
  
-// muestra el login y esconde el perfil y el catalogo
+// Muestra el login y esconde el perfil y el catalogo
 function mostrarVistaLogin() {
     perfilSection.classList.add("hidden");
     catalogoMain.classList.add("hidden");
     loginSection.classList.remove("hidden");
 }
  
-// pone los datos del usuario en los <span> del perfil
+// Pone los datos del usuario en los <span> del perfil
 function mostrarPerfil(usuario) {
     document.getElementById("perfilNombre").textContent = usuario.name.firstname + " " + usuario.name.lastname;
     document.getElementById("perfilUsuario").textContent = usuario.username;
@@ -31,59 +32,55 @@ function mostrarPerfil(usuario) {
 }
  
 // cuando se envía el formulario, se hace login contra la API
-loginForm.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
     loginError.classList.add("hidden");
  
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
  
-    fetch("https://fakestoreapi.com/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: username, password: password })
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw new Error("Usuario o contraseña incorrectos.");
-            }
-            return response.json();
-        })
-        .then(function (dataLogin) {
-            let token = dataLogin.token;
- 
-            // si el login fue correcto, pedimos los datos del usuario
-            fetch("https://fakestoreapi.com/users/1")
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (usuario) {
-                    // guardamos el token y el usuario en localStorage
-                    let sesion = {
-                        token: token,
-                        usuario: usuario
-                    };
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(sesion));
- 
-                    mostrarPerfil(usuario);
-                    mostrarVistaLogueado();
-                    loginForm.reset();
-                });
-        })
-        .catch(function (error) {
-            console.log("ERROR de login: ", error);
-            loginError.textContent = error.message;
-            loginError.classList.remove("hidden");
+    try {
+        const responseLogin = await fetch("https://fakestoreapi.com/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: username, password: password })
         });
+ 
+        if (!responseLogin.ok) {
+            throw new Error("Usuario o contraseña incorrectos.");
+        }
+ 
+        const dataLogin = await responseLogin.json();
+        let token = dataLogin.token;
+ 
+        // si el login fue correcto, pedimos los datos del usuario
+        const responseUsuario = await fetch("https://fakestoreapi.com/users/1");
+        const usuario = await responseUsuario.json();
+ 
+        // guardamos el token y el usuario en localStorage
+        let sesion = {
+            token: token,
+            usuario: usuario
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sesion));
+ 
+        mostrarPerfil(usuario);
+        mostrarVistaLogueado();
+        loginForm.reset();
+    } catch (error) {
+        console.log("ERROR de login: ", error);
+        loginError.textContent = error.message;
+        loginError.classList.remove("hidden");
+    }
 });
  
-// al hacer click en "cerrar sesion" borramos los datos guardados
+// al hacer click en "Cerrar sesión" borramos los datos guardados
 btnLogout.addEventListener("click", function () {
     localStorage.removeItem(STORAGE_KEY);
     mostrarVistaLogin();
 });
  
-// al cargar la pagina, revisamos si ya había una sesion guardada
+// Al cargar la página, revisamos si ya había una sesión guardada
 let sesionGuardada = localStorage.getItem(STORAGE_KEY);
 if (sesionGuardada !== null) {
     let datosSesion = JSON.parse(sesionGuardada);
@@ -92,8 +89,9 @@ if (sesionGuardada !== null) {
 } else {
     mostrarVistaLogin();
 }
- 
+
 // Nicolas Negretto Fin
+
 // Augusto Fernandez inicio
 let selectCategoria = document.querySelector('#selectCategoria');
 let inputBuscador = document.querySelector('#inputBuscador');
