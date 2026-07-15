@@ -303,3 +303,4 @@ function eliminarDelCarrito(id) {
     renderizarCarrito();
 }
     renderizarCarrito();
+//fin de Ivan sandoval
