@@ -117,7 +117,7 @@ async function fetchCategories() {
         const data = await response.json();
         console.log('GET categorías >', data);
 
-        selectCategoria.innerHTML = '<option value="all">Todas</option>';
+        selectCategoria.innerHTML = '<option value="all">All</option>';
         data.forEach(categoria => {
             selectCategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`;
         });
@@ -161,12 +161,13 @@ function renderProducts(products) {
     products.forEach(product => {
         gridProductos.innerHTML += `
             <article class="product-card">
+                 <h3>${product.title}</h3>
                 <img src="${product.image}" alt="${product.title}" width="200px" height="200px">
-                <h3>${product.title}</h3>
+                
                 <p class="categoria">${product.category}</p>
                 <p class="precio">$${product.price}</p>
                 <button onclick="agregarAlCarrito(${product.id}, '${product.title}', ${product.price}, '${product.image}')">
-                    Agregar al carrito
+                    Add to cart
                 </button>
             </article>
         `;
@@ -218,6 +219,8 @@ inputBuscador.addEventListener('input', () => {
 
     renderProducts(filtrados);
 });
+//Fin de Augusto Fernandez
+
 
 //Ivan sandoval
 
@@ -252,7 +255,7 @@ function renderizarCarrito(){
     carritoItems.innerHTML= '';
 
     if(carrito.length === 0){
-        carritoItems.innerHTML = '<p class="carrito-vacio">El carrito está vacío.</p>';
+        carritoItems.innerHTML = '<p class="carrito-vacio">The cart is empty.</p>';
 
 carritoTotal.textContent = '0.00';
 return;

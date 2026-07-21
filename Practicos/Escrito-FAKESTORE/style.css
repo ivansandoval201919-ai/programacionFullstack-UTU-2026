@@ -89,6 +89,7 @@ min-height: 100vh;
 
 .product-card h3 {
     font-size: 14px;
+    color: black;
     text-align: center;
     margin: 0;
 }
