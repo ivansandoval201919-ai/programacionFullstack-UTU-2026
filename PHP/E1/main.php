@@ -290,15 +290,131 @@ $stock=10;
 $cantidadsolicitada=2;
 
 if($stock>0 && $cantidadsolicitada!=0){
-    echo"Compraste: ". $nombre;
-    echo "El total es: " . $precio * $cantidadsolicitada;
+    echo"\nCompraste: ". $nombre;
+    echo "\nEl total es: " . $precio * $cantidadsolicitada;
 } 
 
 else if($cantidadsolicitada>=10){
-    echo"Compraste: ". $nombre;
-    echo "Total con 15%: " . ($precio * $cantidadsolicitada) *0.15;
+    echo "\nCompraste: ". $nombre;
+    echo "\nTotal con 15%: " . ($precio * $cantidadsolicitada) *0.15;
 } 
 else if($stock<=0){
-    echo "No hay stock disponible.";
+    echo "\nNo hay stock disponible.";
 }
+
+echo "\nBloque 7";
+echo "\nEjercicio 1";
+
+for ($i = 1; $i <=10; $i++ ){
+    echo "\n". $i;
+
+}
+echo "\nEjercicio 2";
+for ($l = 10; $l >=1; $l-- ){
+    echo "\n". $l;
+ if($l == 1){
+    echo "\n¡Comenzamos!";
+ }
+}
+echo "\nEjercicio3";
+
+for ($o = 1; $o <=20; $o ++ ){
+    if ($o %2 ==0){
+        echo "\n". $o;
+    }
+
+}
+echo "\nEjercicio4";
+
+$numero = 3;
+for ($i = 1; $i <=10; $i++ ){
+ echo "\n" . $numero * $i;
+}
+
+echo "\nBloque 8";
+echo "\nEjercicio 1";
+
+$totales=0;
+for ($i =1 ; $i <=10; $i ++){
+    $totales+= $i;
+    
+}
+    echo "\nEl total es: ". $totales;
+
+    $totalidad=0;
+    echo "\nEjercicio 2";
+    for ($i =1 ; $i <=100; $i ++){
+    $totalidad+= $i;
+    
+}
+echo "\nEl total es: ". $totalidad;
+
+
+echo "\nEjercicio 3";
+for ($i =1 ; $i <=50; $i ++){
+    $totalidad+= $i;
+    
+    if($i % 2 == 0){
+        echo "\n" . $i;
+    }
+}
+echo "\nTotal: " . $totalidad;  
+
+echo "\nEjercicio 4";
+
+for ($i =1 ; $i <=100; $i ++){
+    $totalidad+= $i;
+    
+    if($i % 3 == 0){
+        echo "\n" . $i;
+    }
+
+}
+    echo "\nTotal: " . $totalidad;  
+
+    echo "\nBloque 9";
+    
+    echo "\nEjercicio 1";
+
+$numero = 1;
+
+while ($numero <=10) {
+    echo "\n". $numero;
+    $numero++;
+}
+
+echo "\nEjercicio 2";
+
+$num = 2;
+
+while ($num <=20) {
+    
+   if($num %2 ==0){ echo "\n". $num;
+    
+   }$num++;
+}
+
+echo "\nEjercicio 3";
+
+$a = 1;
+
+while ($a <=100){
+    echo "\n" . $a;
+    $a *= 2;
+    
+}
+echo "\nEjercicio 4";
+
+$pesos = 0;
+$meses = 0;
+
+while ($pesos <=5000){
+
+echo "\nAhorro durante el mes " . $meses . " son un total de " . $pesos;
+$pesos += 500;
+
+$meses++;
+}
+
+
 ?>
