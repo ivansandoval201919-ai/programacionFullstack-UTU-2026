@@ -237,7 +237,7 @@ if ($edad>=18 && $entrada==true){
 } else {    
     echo "\nAcceso denegado.";
 }
-*/
+
 echo "\nBLOQUE 6";
 
 echo"\nEjercicio 1";
@@ -415,6 +415,95 @@ $pesos += 500;
 
 $meses++;
 }
+*/
+echo "\nBloque 10";
+
+echo "\nEjercicio 1";
+function saludar(){
+echo "\nBienvenido al sistema.";
+
+}
+saludar();
+saludar();
+
+echo "\nEjercicio 2";
+function saludarUsuario($nombre){
+
+    echo "\nHola! " . $nombre;
+
+}
+
+saludarUsuario("A");
+saludarUsuario("B");
+
+echo "\nEjercicio 3";
+function sumar($numero1, $numero2){
+    $total= $numero1 + $numero2;
+
+    echo "\nLa suma total es: " . $total;
+}
+
+sumar(10,20);
+
+echo "\nEjercicio 4";
+
+function calcularTotal($precio, $cantidad){
+
+    $total = $precio * $cantidad; 
+
+    echo "\nEl total de la compra es: " . $total;
+}
+
+calcularTotal(10,20);
+
+echo "\nBloque 11";
+
+echo "\nEjercicio 1";
+
+function esMayorDeEdad($edad){
+    if($edad>=18){
+        return true;
+
+    }else{return false;}
+
+}
+
+echo esMayorDeEdad(19);
+
+echo "\nEjercicio 2";
+
+function esPar($numero){
+    if($numero%2==0){
+        return true;
+    }else{return false;}
+}
+esPar(10);
+
+echo "\nEjercicio 3";
+
+function finalprice($precio, $descuento){
+$total= $precio*$descuento;
+echo "\n$total";
+}
+finalprice(200, 0.20);
+
+echo "\nEjercicio 4";
+
+function promedio($nota1, $nota2, $nota3){
+return $promedio= ($nota1+$nota2+$nota3)/3;
 
 
+
+}
+function aprobado($promedio){
+    if ($promedio>=5){
+        echo "\nAprobado";
+    }else{
+        echo "\nReprobado";
+    }
+}
+
+
+$promedioobtenido = promedio(10,10,10);
+aprobado($promedioobtenido);
 ?>
