@@ -415,7 +415,6 @@ $pesos += 500;
 
 $meses++;
 }
-*/
 echo "\nBloque 10";
 
 echo "\nEjercicio 1";
@@ -506,4 +505,48 @@ function aprobado($promedio){
 
 $promedioobtenido = promedio(10,10,10);
 aprobado($promedioobtenido);
+
+
+echo "\nBloque 12";
+echo "\nEjercicio 1";
+
+$nombres = ["Juan", "Ana", "Luis", "Sara", "Carlos"];
+
+echo $nombres[0];
+echo $nombres[1];
+echo $nombres[2];
+echo $nombres[3];
+echo $nombres[4];
+*/
+echo "\nEjercicio 2";
+
+$nombres = ["Juan", "Ana", "Luis", "Sara", "Carlos"];
+
+for($i=0; $i < count ($nombres); $i ++){
+    echo "\n". $nombres[$i];
+}
+
+foreach($nombres as $nombre){
+    echo "\n" . $nombre;
+}
+
+echo "\nEjercicio 3";
+
+$prices = [100, 200, 300, 400, 500];
+
+foreach ($prices as $price){
+    echo "\n$". $price;
+
+
+}
+echo "\nEjercicio 4";
+$total = 0;
+$numbers = [1,2,3];
+foreach ($numbers as $number){
+    $total += $number;
+}
+echo "\nTotal: " . $total;
+$total = 0;
+echo "\n" . $total = array_sum($numbers);
+
 ?>
