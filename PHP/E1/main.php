@@ -517,7 +517,7 @@ echo $nombres[1];
 echo $nombres[2];
 echo $nombres[3];
 echo $nombres[4];
-*/
+
 echo "\nEjercicio 2";
 
 $nombres = ["Juan", "Ana", "Luis", "Sara", "Carlos"];
@@ -549,4 +549,60 @@ echo "\nTotal: " . $total;
 $total = 0;
 echo "\n" . $total = array_sum($numbers);
 
-?>
+
+echo "\nBloque 13";
+
+echo "\nEjercicio 1";
+
+$numeros = [1, 2, 3 , 4, 5];
+
+foreach($numeros as $numero){
+    if($numero%2 ==0){
+     echo "\n" . $numero;   
+    }
+}
+echo "\nEjercicio 2";
+
+$notas = [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10];
+
+foreach($notas as $nota){
+    if($nota>=6){
+        echo "\n" . $nota;
+    }
+}
+*/
+echo "\nEjercicio 3";
+
+$nombres= ["Ana", "Luis", "Sara", "Carlos"];
+$name="Luis";
+
+foreach ($nombres as $nombre){
+    if($nombre === $name){
+        echo "\nNombre encontrado";
+    }
+}
+
+if(in_array($name, $nombres)){
+    
+    echo "\nNombre encontrado";
+}
+
+echo "\nEjercicio 4";
+
+$numeros = [11, 388, 92];
+
+$mayor= $numeros[0];
+foreach($numeros as $numero){
+
+    if($numero > $mayor){
+        $mayor=$numero;
+    }
+}
+echo "\nNumero mayor es " . $mayor;
+
+$mayor = max($numeros);
+echo "\nNumero mayor es " . $mayor;
+
+echo "\nBloque 14";
+
+
