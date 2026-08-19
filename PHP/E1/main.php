@@ -850,6 +850,31 @@ if($resultado){
 }
 
 echo "\nBloque 18";
+echo "\nEjercicio 1";
+$numeros= [1,2,3,4,5,6];
 
+function sumarnumeros($numeros){
+    $total=0;
+    foreach($numeros as $numero){
+        $total += $numero;
+    }
+    return $total;
+}
 
+echo "\n".sumarnumeros($numeros);
+
+echo "\nEjercicio 2";
+
+$notas=[1,2,3,4,5,8,10];
+
+function contarAprobados($notas){
+    $contadornotas= 0;
+    foreach($notas as $nota){
+        if($nota>=6){
+            $contadornotas+=1;
+        }
+    }
+    return $contadornotas;
+}
+echo "\n" . contarAprobados($notas);
 ?>
