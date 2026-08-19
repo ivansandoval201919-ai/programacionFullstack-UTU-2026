@@ -787,4 +787,6 @@ if($resultado){
     echo "\nProducto no encontrado";
 }
 
+
+
 ?>
