@@ -570,7 +570,7 @@ foreach($notas as $nota){
         echo "\n" . $nota;
     }
 }
-*/
+
 echo "\nEjercicio 3";
 
 $nombres= ["Ana", "Luis", "Sara", "Carlos"];
@@ -605,4 +605,160 @@ echo "\nNumero mayor es " . $mayor;
 
 echo "\nBloque 14";
 
+echo "\nEjercicio 1";
 
+$numeros = [1, 2, 3, 80];
+$total =0;
+foreach($numeros as $numero){
+    $total+=$numero;
+    
+}
+echo "Total: " . $total . "\nCantidad: " . count($numeros) . "\nPromedio: " . $total/count($numeros);
+echo "\nEjercicio 2";
+
+$notas= [10, 8, 7, 9, 6];
+
+foreach($notas as $nota){
+if($nota>=5){
+    echo "\nNota:" . $nota . " APROBADO";
+} else {
+    echo "\nNota:" . $nota . " REPROBADO";
+}
+
+}
+
+echo "\nEjercicio 3";
+
+$notas= [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10];
+$aprobados=0;
+$reprobados=0;
+$total=0;
+foreach($notas as $nota){
+    echo "\n". $nota;
+        $total+=$nota;
+
+if($nota>=5){
+    $aprobados ++;
+}else{
+    $reprobados ++;
+}
+}
+
+echo "\nPromedio: " . $total/count($notas) . "\nAprobados: " . $aprobados . "\nReprobados: " . $reprobados;
+
+echo "\nEjercicio 4";
+
+$numeros= [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10];
+$pares=0;
+$impares=0;
+$total=0;
+foreach($numeros as $numero){
+    echo "\n". $numero;
+        $total+=$numero;
+
+if($numero%2 == 0){
+    $pares ++;
+}else{
+    $impares ++;
+}
+}
+
+echo "\nTotal: " . $total . "\nPares: " . $pares . "\nImpares: " . $impares . "\nNumero mayor: " . max($numeros) . "\nNumero menor: " . min($numeros);
+
+echo "\nBloque 15";
+
+echo "\nEjercicio 1";
+
+$datos=[
+    'nombre' => 'Juan',
+    'edad' => 20,
+    'ciudad' => 'San jose'
+];
+
+echo "\nHola " . $datos['nombre'] . ", tienes " . $datos['edad'] . " años y vives en " . $datos['ciudad'];
+
+echo "\nEjercicio 2";
+
+$producto=[
+    'nombre' => 'Silla Gamer',
+    'precio' => 2000,
+    'stock' => 10
+];
+
+echo "\nTu producto " . $producto['nombre'] . ", vale " . $producto['precio'] . " y quedan " . $producto['stock'] . " unidades";
+
+echo "\nEjercicio 3";
+
+$productos=[
+    'nombre' => 'Silla Gamer',
+    'precio' => 2000,
+    'stock' => 10
+];
+$productos['precio'] = 3000;
+$productos['stock'] = 9;
+$productos['categoria'] = 'Gamer';
+
+echo "\nTu producto " . $productos['nombre'] . ", vale " . $productos['precio'] . " y quedan " . $productos['stock'] . " unidades, la categoria es " . $productos['categoria'];
+*/
+echo "\nEjercicio 4";
+
+$producto=[
+    'nombre' => 'Silla Gamer',
+    'precio' => 2000,
+    'stock' => 10
+];
+
+$cantidadsolicitada=3;
+
+if($cantidadsolicitada<=$producto['stock']){
+    $total = $cantidadsolicitada*$producto['precio'];
+    $producto['stock']-=$cantidadsolicitada;
+    echo "\nTotal: " . $total;
+    
+}else{
+    echo "\nNo hay stock disponible.";
+}
+
+echo "\nBloque 16";
+
+echo "\nEjercicio 1";
+
+$productos= [
+    ['nombre' => "Silla", 'precio' => 100, 'stock' => 10],
+    ['nombre' => "Mesa", 'precio' => 2000, 'stock' => 0],
+    ['nombre' => "Lampara", 'precio' => 300, 'stock' => 0]
+];
+
+
+foreach($productos as $producto){
+    echo "\n" . $producto['nombre'] . ": $" . $producto['precio'];
+}
+
+echo "\nEjercicio 2";
+
+foreach($productos as $producto){
+if($producto['stock']>0){
+    echo "\n" . $producto['nombre'] . ": $" . $producto['precio'];
+}else{
+    echo "\nNo hay stock disponible.";
+}
+}
+
+echo "\nEjercicio 3";
+foreach($productos as $producto){
+if($producto['precio']>1000){
+    echo "\n" . $producto['nombre'] . ": $" . $producto['precio'];
+}
+}
+
+echo "\nEjercicio 4";
+
+$total = 0;
+foreach($productos as $producto){
+$total += $producto['precio'] * $producto['stock'];
+
+}
+echo "\nTotal: " . $total;
+
+
+echo "\nBloque 17";
