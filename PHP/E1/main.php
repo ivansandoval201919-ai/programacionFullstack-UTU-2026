@@ -917,4 +917,6 @@ foreach($productos as $producto){
 
 }
 print_r(obtenerProductosConStock($productos));
+
+echo "\nBloque 19";
 ?>
