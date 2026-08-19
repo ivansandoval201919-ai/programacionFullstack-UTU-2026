@@ -813,7 +813,7 @@ if($resultado){
 } else {
     echo "\nProducto no encontrado";
 }
-*/
+
 echo "\nEjercicio 3";
 
 $productos=[
@@ -877,4 +877,44 @@ function contarAprobados($notas){
     return $contadornotas;
 }
 echo "\n" . contarAprobados($notas);
+
+echo "\nEjercicio 3";
+
+$productos=['id' => 20];
+$id=20;
+function buscarProductoPorId($productos, $id){
+foreach($productos as $producto){
+    if($id == $productos['id']){
+            return $producto;
+    }else {
+        return null;
+    }
+}
+
+}
+echo "\n" . buscarProductoPorId($productos, $id);
+*/
+
+echo "\n Ejercicio 4";
+
+$productos=[
+    ['id' => 20, 'nombre' => 'Silla', 'precio' => 1000, 'stock' => 10],
+    ['id' => 21, 'nombre' => 'Mesa', 'precio' => 2000, 'stock' => 0],
+    ['id' => 22, 'nombre' => 'Lampara', 'precio' => 30000, 'stock' => 0],
+    ['id' => 23, 'nombre' => 'Sofa', 'precio' => 20000034, 'stock' => 10],
+
+];
+
+function obtenerProductosConStock($productos){
+    $productosconstock = [];
+foreach($productos as $producto){
+    if($producto['stock'] >0){
+        $productosconstock[] =$producto;
+
+    }
+}
+        return $productosconstock;
+
+}
+print_r(obtenerProductosConStock($productos));
 ?>
