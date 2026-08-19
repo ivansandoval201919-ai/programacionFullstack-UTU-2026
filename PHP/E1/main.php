@@ -699,7 +699,7 @@ $productos['stock'] = 9;
 $productos['categoria'] = 'Gamer';
 
 echo "\nTu producto " . $productos['nombre'] . ", vale " . $productos['precio'] . " y quedan " . $productos['stock'] . " unidades, la categoria es " . $productos['categoria'];
-*/
+
 echo "\nEjercicio 4";
 
 $producto=[
@@ -760,5 +760,31 @@ $total += $producto['precio'] * $producto['stock'];
 }
 echo "\nTotal: " . $total;
 
-
+*/
 echo "\nBloque 17";
+
+$productos=[
+    ['nombre' => 'Silla', 'precio' => 1000, 'stock' => 10],
+    ['nombre' => 'Mesa', 'precio' => 2000, 'stock' => 0],
+    ['nombre' => 'Lampara', 'precio' => 300, 'stock' => 0],
+    ['nombre' => 'Silla', 'precio' => 234, 'stock' => 10],
+
+];
+
+$productobuscado= 'Mesa';
+
+$resultado=array_filter($productos, function($p) use ($productobuscado){
+return $p['nombre']==$productobuscado;
+});
+
+
+if($resultado){
+    $producto = reset($resultado);
+    echo "\nNombre: " . $producto['nombre'];
+    echo "\nPrecio: " . $producto['precio'];
+    echo "\nStock: " . $producto['stock'];
+} else {
+    echo "\nProducto no encontrado";
+}
+
+?>
