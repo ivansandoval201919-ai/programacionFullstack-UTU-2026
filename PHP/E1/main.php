@@ -760,9 +760,9 @@ $total += $producto['precio'] * $producto['stock'];
 }
 echo "\nTotal: " . $total;
 
-*/
 echo "\nBloque 17";
 
+echo "\nEjercicio 1";
 $productos=[
     ['nombre' => 'Silla', 'precio' => 1000, 'stock' => 10],
     ['nombre' => 'Mesa', 'precio' => 2000, 'stock' => 0],
@@ -787,6 +787,69 @@ if($resultado){
     echo "\nProducto no encontrado";
 }
 
+
+echo "\nEjercicio 2";
+
+$productos=[
+    ['id'=> 2458,'nombre' => 'Silla', 'precio' => 1000, 'stock' => 10],
+    ['id'=> 2451,'nombre' => 'Mesa', 'precio' => 2000, 'stock' => 0],
+    ['id'=> 2452,'nombre' => 'Lampara', 'precio' => 300, 'stock' => 0],
+    ['id'=> 2453,'nombre' => 'Silla', 'precio' => 234, 'stock' => 10],
+
+];
+
+$productobuscado = 2451;
+
+$resultado=array_filter($productos, function($p) use ($productobuscado){
+return $p['id']==$productobuscado;
+});
+
+
+if($resultado){
+    $producto = reset($resultado);
+    echo "\nNombre: " . $producto['nombre'];
+    echo "\nPrecio: " . $producto['precio'];
+    echo "\nStock: " . $producto['stock'];
+} else {
+    echo "\nProducto no encontrado";
+}
+*/
+echo "\nEjercicio 3";
+
+$productos=[
+    ['id'=> 2458,'nombre' => 'Silla', 'precio' => 1000, 'stock' => 10],
+    ['id'=> 2451,'nombre' => 'Mesa', 'precio' => 2000, 'stock' => 0],
+    ['id'=> 2452,'nombre' => 'Lampara', 'precio' => 30000, 'stock' => 0],
+    ['id'=> 2453,'nombre' => 'Sofa', 'precio' => 20000034, 'stock' => 10],
+
+];
+
+$precio = $productos[0];
+foreach($productos as $producto){
+    if($producto['precio'] > $precio['precio']){
+        $precio = $producto;
+        
+    }
+}
+
+echo "\nPrecio mas alto: " . $precio['precio'];
+
+echo "\nEjercicio 4";
+
+
+$idbuscado = 2458;
+$resultado=array_filter($productos, function($p) use ($idbuscado){
+return $p['id']==$idbuscado;
+});
+
+if($resultado){
+    $producto = reset($resultado);
+    echo "\nNombre: " . $producto['nombre'] . "\nPrecio: " . $producto['precio'] . "\nStock: " . $producto['stock'];
+} else {
+    echo "\nProducto no encontrado";
+}
+
+echo "\nBloque 18";
 
 
 ?>
