@@ -1,0 +1,24 @@
+Dónde se reconoce la petición en index.php
+
+-Se "ejecuta" AuthController.php, se ejecuta el metodo POST
+
+Qué hace el Controller
+
+-los datos que recibe es el email y la clave, verifica que email y password sean correctos sino los hace nulos para evitar errores, Tambien verifica que no esten vacios tirando error 400 en el caso de que lo sean, luego se lo envia a services/AuthService al metodo login().
+
+Si necesita autenticación o permisos de administrador
+
+-Se utiliza el metodo requireLogin()
+
+
+Qué hace el Service
+
+-Hace una peticion al repository filtrando por email para luego devolver si ya fue registrado o no, luego verifica la contrasena y devuelve el token, tambien si el email no existe devuelve un error generico esto para no especificar cual es el error exacto
+
+Si intervienen Repository y Model
+
+-Repository interviene al principio de la logica de service para buscar el email y saber si ya esta registrado, sino devuelve un error.
+
+Cuál es la respuesta final de la API
+
+-Devuelve el estado 200 Ok HTTP y devuelve el token y el usuario
